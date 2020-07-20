@@ -162,10 +162,10 @@
                                 <div class="row no-gutters align-items-center">
                                     <div class="col mr-2">
                                         <div class="text-xs font-weight-bold text-info text-uppercase mb-1">Order Makanan</div>
-                                        <a href="<?= base_url('order/order_makanan') ?>" class="btn btn-primary"><i class="fas fa-drumstick-bite fa-2x text-gray-300"></i></a>
+                                        <a href="<?= base_url('order/order_makanan') ?>" class="btn btn-primary"> <i class="fas  fa-utensils fa-2x text-gray-300"></i></a>
                                     </div>
                                     <div class="col-auto">
-                                        <i class="fas fa-drumstick-bite fa-2x text-gray-300"></i>
+                                        <i class="fas  fa-utensils fa-2x text-gray-300"></i>
                                     </div>
                                 </div>
                             </div>
