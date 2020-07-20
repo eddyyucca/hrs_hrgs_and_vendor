@@ -68,6 +68,21 @@
                 </div>
               </div>
             </li>
+
+            <li class="nav-item">
+              <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#vendor" aria-expanded="true" aria-controls="vendor">
+                <i class="fas fa-table"></i>
+                <span>Vendor Makanan</span>
+              </a>
+              <div id="vendor" class="collapse" aria-labelledby="headingTwo2" data-parent="#accordionSidebar">
+                <div class="bg-white py-2 collapse-inner rounded">
+                  <a class="collapse-item" href="<?= base_url('order/laporan_bulanan') ?>">Akun Vendor</a>
+                  <a class="collapse-item" href="<?= base_url('order/laporan_departemen') ?>">Pesan Makanan</a>
+                  <a class="collapse-item" href="<?= base_url('order/laporan_departemen') ?>">Laporan Makanan</a>
+                </div>
+              </div>
+            </li>
+
             <!-- Divider -->
             <hr class="sidebar-divider d-none d-md-block">
 
