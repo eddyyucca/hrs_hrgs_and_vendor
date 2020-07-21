@@ -7,7 +7,7 @@
         <div class="card-body">
             <div class="table-responsive">
                 <div class="container">
-                    <a href="<?= base_url('atk/tambah_barang') ?>" class="btn btn-danger">Tambah Akun Vendor</a>
+                    <a href="<?= base_url('vendor/tambah_vendor') ?>" class="btn btn-danger">Tambah Akun Vendor</a>
                     <!-- Button trigger modal -->
                     <!-- Modal -->
                     <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
