@@ -24,6 +24,7 @@ class Vendor extends CI_Controller
 		$data['alerts_3'] = $this->order_model->alerts_3();
 		$data['nama'] = $this->session->userdata('nama_user');
 		$data['level_akun'] = $this->session->userdata('level');
+		$data['vendor'] = $this->vendor_model->get_akunvendor();
 
 
 		$this->load->view('template/header', $data);
@@ -43,6 +44,20 @@ class Vendor extends CI_Controller
 		$this->load->view('vendor/tambah_vendor', $data);
 		$this->load->view('template/footer');
 	}
+	public function edit_vendor($id_vendor)
+	{
+		$data['judul'] = 'Akun Vendor';
+		$data['alerts'] = $this->order_model->getDataJoin();
+		$data['alerts_3'] = $this->order_model->alerts_3();
+		$data['nama'] = $this->session->userdata('nama_user');
+		$data['level_akun'] = $this->session->userdata('level');
+		$data['vendor'] = $this->vendor_model->data_vendor_id($id_vendor);
+
+
+		$this->load->view('template/header', $data);
+		$this->load->view('vendor/edit_vendor', $data);
+		$this->load->view('template/footer');
+	}
 
 	public function prosestambahvendor()
 	{
@@ -54,7 +69,18 @@ class Vendor extends CI_Controller
 		$this->db->insert('vendor', $data);
 		$this->session->set_Flashdata('pesanan', "<div class='alert alert-success' role='alert'>Akun Berhasil Dibuat  !
         </div>");
-		redirect('vendor');
+		redirect('vendor/akun_vendor');
+	}
+	public function proseseditvendor($id_vendor)
+	{
+		$data = array(
+			"nama_vendor" => $this->input->post('nama_vendor'),
+			"username_v" => $this->input->post('username'),
+			"password" => md5($this->input->post('password')),
+		);
+		$this->db->where('id_vendor', $id_vendor);
+		$this->db->update('vendor', $data);
+		redirect('vendor/akun_vendor');
 	}
 
 	public function order()
@@ -135,6 +161,12 @@ class Vendor extends CI_Controller
 		$this->db->where('id_pos', $id_lokasi);
 		$this->db->delete('lokasi_pos');
 		redirect('vendor/data_lokasi');
+	}
+	public function hapus_vendor($id_vendor)
+	{
+		$this->db->where('id_vendor', $id_vendor);
+		$this->db->delete('vendor');
+		redirect('vendor/akun_vendor');
 	}
 }
 

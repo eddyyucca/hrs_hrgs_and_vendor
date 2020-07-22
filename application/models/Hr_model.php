@@ -58,6 +58,16 @@ class Hr_model extends CI_Model
             return 0;
         }
     }
+    public function cek_id($id_kar)
+    {
+        $this->db->where('id_karyawan', $id_kar);
+        $query = $this->db->get('data_karyawan');
+        if ($query->num_rows() > 0) {
+            return true;
+        } else {
+            return false;
+        }
+    }
 
     // public function departemen()
     // {

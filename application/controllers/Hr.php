@@ -133,98 +133,102 @@ class Hr extends CI_Controller
 
     public function prosestambahkaryawan()
     {
-        $dep = $this->input->post('dep');
-        $ttl = $this->input->post('ttl');
-        $xxx =  $this->hr_model->hitung_id($dep);
-        $jumlah = $xxx + 1;
-        $tanggal =  preg_replace("/[-]/", "", $ttl);
-        $id_kar = $dep . $tanggal . $jumlah;
+        // $dep = $this->input->post('dep');
+        // $ttl = $this->input->post('ttl');
+        // $xxx =  $this->hr_model->hitung_id($dep);
+        // $jumlah = $xxx + 1;
+        // $tanggal =  preg_replace("/[-]/", "", $ttl);
+        // $id_kar = $dep . $tanggal . $jumlah;
 
-        // echo $xxx;
-        // echo "<br>";
-        // echo $jumlah;
-        // echo "<br>";
-        // echo $id_kar;
+        $id_kar = $this->input->post('id_kar');
+
+        $cek = $this->hr_model->cek_id($id_kar);
+        if ($cek == true) {
+            $this->session->set_Flashdata('tambah_karyawan', "<div class='alert alert-success' role='alert'>Karyawan dengan NRP $id_kar sudah ada !
+            </div>");
+            redirect('hr/karyawan');
+        } elseif ($cek == false) {
 
 
-        $data = array(
-            'id_karyawan' => $id_kar,
-            'nama_lengkap' => $this->input->post('nama_lengkap'),
-            'nama_panggilan' => $this->input->post('nama_panggilan'),
-            'jk' => $this->input->post('jk'),
-            'tempat' => $this->input->post('tempat'),
-            'ttl' => $this->input->post('ttl'),
-            'alamat_saat_ini' => $this->input->post('alamat_saat_ini'),
-            'alamat_permanen' => $this->input->post('alamat_permanen'),
-            'no_telp' => $this->input->post('no_telp'),
-            'agama' => $this->input->post('agama'),
-            'warganegra' => $this->input->post('warganegra'),
-            'suku' => $this->input->post('suku'),
-            // 'no_ktp' => $this->input->post('no_ktp'),
-            // 'alamat_ktp' => $this->input->post('alamat_ktp'),
-            // 'masa_berlaku_ktp' => $this->input->post('masa_berlaku_ktp'),
-            // 'no_sim_a' => $this->input->post('no_sim_a'),
-            // 'alamat_sim_a' => $this->input->post('alamat_sim_a'),
-            // 'masa_berlaku_sim_a' => $this->input->post('masa_berlaku_sim_a'),
-            // 'no_sim_c' => $this->input->post('no_sim_c'),
-            // 'alamat_sim_c' => $this->input->post('alamat_sim_c'),
-            // 'masa_berlaku_sim_c' => $this->input->post('masa_berlaku_sim_c'),
-            // 'no_npwp' => $this->input->post('no_npwp'),
-            // 'no_bpjs_tenagakerja' => $this->input->post('no_bpjs_tenagakerja'),
-            // 'no_bpjs_kes' => $this->input->post('no_bpjs_kes'),
-            // 'no_passport' => $this->input->post('no_passport'),
-            // 'alamat_passport' => $this->input->post('alamat_passport'),
-            // 'masa_berlaku_passport' => $this->input->post('masa_berlaku_passport'),
-            'tinggi_badan' => $this->input->post('tinggi_badan'),
-            'berat_badan' => $this->input->post('berat_badan'),
-            'rhesus' => $this->input->post('rhesus'),
-            'ukuran_baju' => $this->input->post('ukuran_baju'),
-            'ukuran_celana' => $this->input->post('ukuran_celana'),
-            'ukuran_sepatu' => $this->input->post('ukuran_sepatu'),
-            'hobi' => $this->input->post('hobi'),
-            'email' => $this->input->post('email'),
-            'id_dep' => $this->input->post('dep'),
-            'id_jab' => $this->input->post('jab'),
-            'status_karyawan' => "Aktif"
-            // 'foto' => $this->input->post('foto'),
-        );
+            $data = array(
+                'id_karyawan' => $id_kar,
+                'nama_lengkap' => $this->input->post('nama_lengkap'),
+                'nama_panggilan' => $this->input->post('nama_panggilan'),
+                'jk' => $this->input->post('jk'),
+                'tempat' => $this->input->post('tempat'),
+                'ttl' => $this->input->post('ttl'),
+                'alamat_saat_ini' => $this->input->post('alamat_saat_ini'),
+                'alamat_permanen' => $this->input->post('alamat_permanen'),
+                'no_telp' => $this->input->post('no_telp'),
+                'agama' => $this->input->post('agama'),
+                'warganegra' => $this->input->post('warganegra'),
+                'suku' => $this->input->post('suku'),
+                // 'no_ktp' => $this->input->post('no_ktp'),
+                // 'alamat_ktp' => $this->input->post('alamat_ktp'),
+                // 'masa_berlaku_ktp' => $this->input->post('masa_berlaku_ktp'),
+                // 'no_sim_a' => $this->input->post('no_sim_a'),
+                // 'alamat_sim_a' => $this->input->post('alamat_sim_a'),
+                // 'masa_berlaku_sim_a' => $this->input->post('masa_berlaku_sim_a'),
+                // 'no_sim_c' => $this->input->post('no_sim_c'),
+                // 'alamat_sim_c' => $this->input->post('alamat_sim_c'),
+                // 'masa_berlaku_sim_c' => $this->input->post('masa_berlaku_sim_c'),
+                // 'no_npwp' => $this->input->post('no_npwp'),
+                // 'no_bpjs_tenagakerja' => $this->input->post('no_bpjs_tenagakerja'),
+                // 'no_bpjs_kes' => $this->input->post('no_bpjs_kes'),
+                // 'no_passport' => $this->input->post('no_passport'),
+                // 'alamat_passport' => $this->input->post('alamat_passport'),
+                // 'masa_berlaku_passport' => $this->input->post('masa_berlaku_passport'),
+                'tinggi_badan' => $this->input->post('tinggi_badan'),
+                'berat_badan' => $this->input->post('berat_badan'),
+                'rhesus' => $this->input->post('rhesus'),
+                'ukuran_baju' => $this->input->post('ukuran_baju'),
+                'ukuran_celana' => $this->input->post('ukuran_celana'),
+                'ukuran_sepatu' => $this->input->post('ukuran_sepatu'),
+                'hobi' => $this->input->post('hobi'),
+                'email' => $this->input->post('email'),
+                'id_dep' => $this->input->post('dep'),
+                'id_jab' => $this->input->post('jab'),
+                'status_karyawan' => "Aktif"
+                // 'foto' => $this->input->post('foto'),
+            );
 
-        $data2 = array(
-            'id_kar' => $id_kar,
-            'password' => md5($id_kar),
-            'level' => "user",
-        );
-        //simpan ke db
-        $this->hr_model->tambah_karyawan($data);
-        $this->hr_model->tambah_user($data2);
+            $data2 = array(
+                'id_kar' => $id_kar,
+                'password' => md5($id_kar),
+                'level' => "user",
+            );
+            //simpan ke db
+            $this->hr_model->tambah_karyawan($data);
+            $this->hr_model->tambah_user($data2);
 
-        // whatsapp gateway
-        $pesan = 'PT. Hasnur Riung Sinergi, Silahkan lengkapi data diri anda di www.hrsmining.com dengan user login NRP & Password ' . $id_kar;
-        $userkey = '714af2219e84';
-        $passkey = 'nn2ra3ux8b';
-        $telepon = $this->input->post('no_telp');
-        $message = $pesan;
-        $url = 'https://gsm.zenziva.net/api/sendWA/';
-        $curlHandle = curl_init();
-        curl_setopt($curlHandle, CURLOPT_URL, $url);
-        curl_setopt($curlHandle, CURLOPT_HEADER, 0);
-        curl_setopt($curlHandle, CURLOPT_RETURNTRANSFER, 1);
-        curl_setopt($curlHandle, CURLOPT_SSL_VERIFYHOST, 2);
-        curl_setopt($curlHandle, CURLOPT_SSL_VERIFYPEER, 0);
-        curl_setopt($curlHandle, CURLOPT_TIMEOUT, 30);
-        curl_setopt($curlHandle, CURLOPT_POST, 1);
-        curl_setopt($curlHandle, CURLOPT_POSTFIELDS, array(
-            'userkey' => $userkey,
-            'passkey' => $passkey,
-            'nohp' => $telepon,
-            'pesan' => $message
-        ));
-        $results = json_decode(curl_exec($curlHandle), true);
-        curl_close($curlHandle);
+            // // whatsapp gateway
+            // $pesan = 'PT. Hasnur Riung Sinergi, Silahkan lengkapi data diri anda di www.hrsmining.com dengan user login NRP & Password ' . $id_kar;
+            // $userkey = '714af2219e84';
+            // $passkey = 'nn2ra3ux8b';
+            // $telepon = $this->input->post('no_telp');
+            // $message = $pesan;
+            // $url = 'https://gsm.zenziva.net/api/sendWA/';
+            // $curlHandle = curl_init();
+            // curl_setopt($curlHandle, CURLOPT_URL, $url);
+            // curl_setopt($curlHandle, CURLOPT_HEADER, 0);
+            // curl_setopt($curlHandle, CURLOPT_RETURNTRANSFER, 1);
+            // curl_setopt($curlHandle, CURLOPT_SSL_VERIFYHOST, 2);
+            // curl_setopt($curlHandle, CURLOPT_SSL_VERIFYPEER, 0);
+            // curl_setopt($curlHandle, CURLOPT_TIMEOUT, 30);
+            // curl_setopt($curlHandle, CURLOPT_POST, 1);
+            // curl_setopt($curlHandle, CURLOPT_POSTFIELDS, array(
+            //     'userkey' => $userkey,
+            //     'passkey' => $passkey,
+            //     'nohp' => $telepon,
+            //     'pesan' => $message
+            // ));
+            // $results = json_decode(curl_exec($curlHandle), true);
+            // curl_close($curlHandle);
 
-        $this->session->set_Flashdata('tambah_karyawan', "<div class='alert alert-success' role='alert'>Karyawan baru sudah ditambahkan silahkan login dengan NRP dan Password $id_kar !
+            $this->session->set_Flashdata('tambah_karyawan', "<div class='alert alert-success' role='alert'>Karyawan baru sudah ditambahkan silahkan login dengan NRP dan Password $id_kar !
       </div>");
-        redirect('hr/karyawan');
+            redirect('hr/karyawan');
+        }
     }
 
 

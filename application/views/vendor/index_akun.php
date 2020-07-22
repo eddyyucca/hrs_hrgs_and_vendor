@@ -22,11 +22,7 @@
                                 <div class="modal-body">
                                     Klik Tombol Print,Data akan terunduh dan tersimpan di folder download
                                 </div>
-                                <div class="modal-footer">
-                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                                    <a href="<?= base_url('atk/excel') ?>" class="btn btn-success">Print Excel</a>
 
-                                </div>
                             </div>
                         </div>
                     </div>
@@ -36,24 +32,20 @@
                     <thead>
                         <tr>
                             <th>No</th>
-                            <th>Item</th>
-                            <th>Jumlah</th>
-                            <th>Satuan</th>
+                            <th>Nama Vendor</th>
                             <th>Aksi</th>
                         </tr>
                     </thead>
                     <tbody>
                         <?php
                         $nomor = 1;
-                        foreach ($data as $x) { ?>
+                        foreach ($vendor as $x) { ?>
                             <tr>
                                 <td><?= $nomor++; ?></td>
-                                <td><?= $x->item; ?></td>
-                                <td><?= $x->qty; ?></td>
-                                <td><?= $x->satuan; ?></td>
+                                <td><?= $x->nama_vendor; ?></td>
                                 <td>
-                                    <a href="<?= base_url('atk/edit/') . $x->id; ?>" class="btn btn-primary">Edit</a>
-                                    <a href="<?= base_url('atk/hapus/') . $x->id; ?>" onclick="return confirm('Yakin Hapus?')" class="btn btn-danger">Hapus</a>
+                                    <a href="<?= base_url('vendor/edit_vendor/') . $x->id_vendor; ?>" class="btn btn-primary">Edit</a>
+                                    <a href="<?= base_url('vendor/hapus_vendor/') . $x->id_vendor; ?>" onclick="return confirm('Yakin Hapus?')" class="btn btn-danger">Hapus</a>
                                 </td>
                             </tr>
                         <?php } ?>

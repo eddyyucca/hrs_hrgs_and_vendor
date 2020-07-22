@@ -78,8 +78,8 @@
                 <div class="bg-white py-2 collapse-inner rounded">
                   <a class="collapse-item" href="<?= base_url('vendor/akun_vendor') ?>">Akun Vendor</a>
                   <a class="collapse-item" href="<?= base_url('vendor/data_lokasi') ?>">Lokasi Pengantaran</a>
-                  <a class="collapse-item" href="<?= base_url('order/laporan_departemen') ?>">Pesan Makanan</a>
-                  <a class="collapse-item" href="<?= base_url('order/laporan_departemen') ?>">Laporan Makanan</a>
+                  <a class="collapse-item" href="<?= base_url('vendor/laporan_departemen') ?>">Pesan Makanan</a>
+                  <a class="collapse-item" href="<?= base_url('vendor/laporan_departemen') ?>">Laporan Makanan</a>
                 </div>
               </div>
             </li>
