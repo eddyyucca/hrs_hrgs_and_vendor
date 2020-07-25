@@ -68,8 +68,6 @@ class Auth extends CI_Controller
 
 	public function auth_vendor()
 	{
-		$username = $this->input->post('username');
-		$password =  md5($this->input->post('password'));
 
 		$this->form_validation->set_rules('username', 'Username', 'required');
 		$this->form_validation->set_rules('password', 'Password', 'required');
@@ -81,14 +79,20 @@ class Auth extends CI_Controller
 			$this->load->view('auth/vendor', $data);
 			$this->load->view('auth/template/footer');
 		}
+	}
+	public function vendor_cek()
+	{
+		$username = $this->input->post('username');
+		$password =  md5($this->input->post('password'));
 
 		$cek = $this->auth_model->auth_vendor($username, $password);
 		if ($cek == true) {
 			foreach ($cek as $row);
-			$this->session->set_userdata('username', $row->username);
-			$this->session->set_userdata('nama_lengkap', $row->nama_lengkap);
-			$this->session->set_userdata('id_vendor', $row->id_dep);
-			redirect('vendor');
+			$this->session->set_userdata('id_vendor', $row->id_vendor);
+			$this->session->set_userdata('nama_vendor', $row->nama_vendor);
+			$this->session->set_userdata('username_v', $row->username_v);
+			$this->session->set_userdata('level', 'vendor');
+			redirect('user_vendor');
 		} else {
 			$data['data'] = '<div class="alert alert-danger" role="alert">Password Salah !
             </div>';
@@ -98,7 +102,6 @@ class Auth extends CI_Controller
 			$this->load->view('auth/template/footer');
 		}
 	}
-
 	//------------------------------------------------------------------------//
 	//------------------------------------------------------------------------//
 	//------------------------------------------------------------------------//

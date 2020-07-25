@@ -28,6 +28,8 @@ class Hr extends CI_Controller
         $level_akun = $this->session->userdata('level');
         if ($level_akun != ("hr_admin") <= ("super_admin")) {
             redirect('auth');
+        } elseif ($level_akun == "vendor") {
+            redirect('auth');
         }
     }
 
@@ -140,18 +142,18 @@ class Hr extends CI_Controller
         // $tanggal =  preg_replace("/[-]/", "", $ttl);
         // $id_kar = $dep . $tanggal . $jumlah;
 
-        $id_kar = $this->input->post('id_kar');
+        $id_kar = $this->input->post('id_karyawan');
 
         $cek = $this->hr_model->cek_id($id_kar);
         if ($cek == true) {
-            $this->session->set_Flashdata('tambah_karyawan', "<div class='alert alert-success' role='alert'>Karyawan dengan NRP $id_kar sudah ada !
+            $this->session->set_Flashdata('tambah_karyawan', "<div class='alert alert-danger' role='alert'>Karyawan dengan NRP $id_kar sudah ada !
             </div>");
             redirect('hr/karyawan');
         } elseif ($cek == false) {
 
 
             $data = array(
-                'id_karyawan' => $id_kar,
+                'id_karyawan' => $this->input->post('id_karyawan'),
                 'nama_lengkap' => $this->input->post('nama_lengkap'),
                 'nama_panggilan' => $this->input->post('nama_panggilan'),
                 'jk' => $this->input->post('jk'),
@@ -639,6 +641,7 @@ class Hr extends CI_Controller
         } else {
             $file1["orig_name"] = $foto->foto;
         }
+
 
         $data = array(
             'nama_lengkap' => $this->input->post('nama_lengkap'),

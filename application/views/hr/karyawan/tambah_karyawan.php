@@ -10,6 +10,10 @@
                     <form action="<?= base_url('hr/prosestambahkaryawan') ?>" method="POST">
                         <table class="table">
                             <tr>
+                                <td width=20%>NRP</td>
+                                <td><input type="text" name="id_karyawan" class="form-control" placeholder="NRP"></td>
+                            </tr>
+                            <tr>
                                 <td width=20%>Nama Lengkap</td>
                                 <td><input type="text" name="nama_lengkap" class="form-control" placeholder="Nama Lengkap"></td>
                             </tr>

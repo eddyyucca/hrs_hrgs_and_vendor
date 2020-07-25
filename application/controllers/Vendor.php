@@ -10,11 +10,31 @@ class Vendor extends CI_Controller
 		parent::__construct();
 		$this->load->model('order_model');
 		$this->load->model('vendor_model');
+
+		$level_akun = $this->session->userdata('level');
+		if ($level_akun != ("admin") <= ("kepala_gs")) {
+			redirect('auth');
+		} elseif ($level_akun == "hr_admin") {
+			redirect('hr');
+		} elseif ($level_akun == "admin_dep") {
+			redirect('auth');
+		}
 	}
 
 
 	public function index()
 	{
+		$data['judul'] = 'Akun Vendor';
+		$data['alerts'] = $this->order_model->getDataJoin();
+		$data['alerts_3'] = $this->order_model->alerts_3();
+		$data['nama'] = $this->session->userdata('nama_user');
+		$data['level_akun'] = $this->session->userdata('level');
+		$data['laporan_v'] = $this->vendor_model->laporan_v();
+
+
+		$this->load->view('template/header', $data);
+		$this->load->view('vendor/index', $data);
+		$this->load->view('template/footer');
 	}
 
 	public function akun_vendor()
@@ -90,6 +110,8 @@ class Vendor extends CI_Controller
 		$data['alerts_3'] = $this->order_model->alerts_3();
 		$data['nama'] = $this->session->userdata('nama_user');
 		$data['level_akun'] = $this->session->userdata('level');
+		$data['vendor'] = $this->vendor_model->get_akunvendor();
+		$data['lokasi'] = $this->vendor_model->lokasi();
 
 
 		$this->load->view('template/header', $data);
@@ -167,6 +189,23 @@ class Vendor extends CI_Controller
 		$this->db->where('id_vendor', $id_vendor);
 		$this->db->delete('vendor');
 		redirect('vendor/akun_vendor');
+	}
+
+	public function prosesorder_v()
+	{
+		$data = array(
+
+			"nama_v" => $this->input->post('nama_v'),
+			"shift_v" => $this->input->post('shift_v'),
+			"lokasi_v" => $this->input->post('lokasi_v'),
+			"waktu_pesan_v" => $this->input->post('waktu_pesan_v'),
+			"waktu_post_v" => date('Y-d-m / H:i:s a'),
+			"jumlah_v" => $this->input->post('jumlah_v'),
+			"jumlah_v" => "3"
+		);
+
+		$this->db->insert('order_vendor', $data);
+		redirect('vendor');
 	}
 }
 

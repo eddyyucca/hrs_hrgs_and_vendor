@@ -831,6 +831,7 @@ class User_karyawan extends CI_Controller
         $data = array(
             "id_kar" => $id_kar,
             "tanggal_pesan" => $this->input->post('tanggal_pesanan'),
+            "waktu_post" => date('Y-m-d / H:i:s a'),
             "nama_mess" => $this->input->post('nama_mess'),
             "waktu" => $xx
         );

@@ -6,21 +6,8 @@
         </div>
         <div class="card-body">
             <div class="table-responsive">
-                <div class="container">
-                    <a href="<?= base_url('vendor/tambah_vendor') ?>" class="btn btn-danger">Tambah Akun Vendor</a>
-                    <!-- Button trigger modal -->
-                    <!-- Modal -->
-                    <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-                        <div class="modal-dialog modal-dialog-centered" role="document">
-                            <div class="modal-content">
 
 
-
-                            </div>
-                        </div>
-                    </div>
-                    <hr>
-                </div>
                 <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                     <thead>
                         <tr>
@@ -47,15 +34,10 @@
                                 <td><?= $x->waktu_pesan_v; ?></td>
                                 <td><?= $x->waktu_post_v; ?></td>
                                 <td><?= $x->jumlah_v; ?></td>
-                                <td><?php if ($x->status_v == 2) { ?>
-                                        <div class="alert alert-danger" role="alert">
-                                            Pending
-                                        </div>
-                                    <?php   } elseif ($x->status_v == 1) { ?>
-                                        <div class="alert alert-success" role="alert">
-                                            Sukses
-                                        </div>
-                                    <?php  } ?></td>
+                                <td align="center"> <a href="<?= base_url('user_vendor/order_pending/') . $x->id_order_v; ?>" class="btn btn-primary">Diterima</i></a>
+
+                                    <a href="<?= base_url('user_vendor/ditolak/') . $x->id_order_v; ?>" class="btn btn-danger">Ditolak</i></a>
+                                </td>
 
                             </tr>
                         <?php } ?>

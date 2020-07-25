@@ -24,7 +24,7 @@
 									} else {
 									} ?>
 									<?= validation_errors() ?>
-									<form class="user" action="<?= base_url('auth/auth_vendor') ?>" method="POST">
+									<form class="user" action="<?= base_url('auth/vendor_cek') ?>" method="POST">
 										<div class="form-group mb-4">
 											<input type="text" class="form-control" name="username" placeholder="Username">
 										</div>

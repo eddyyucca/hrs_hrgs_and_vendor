@@ -28,6 +28,7 @@
                                 <th>Nama Karyawan</th>
                                 <th>Nama Mess</th>
                                 <th>Tanggal</th>
+                                <th>tanggal Dibuat</th>
                                 <th>Waktu</th>
                             </tr>
                         </thead>
@@ -45,6 +46,7 @@
                                 <th>Nama Karyawan</th>
                                 <th>Nama Mess</th>
                                 <th>Tanggal</th>
+                                <th>tanggal Dibuat</th>
                                 <th>Waktu</th>
                             </tr>
                         </thead>
@@ -57,6 +59,7 @@
                                     <td><?= $x->nama_lengkap ?></td>
                                     <td><?= $x->nama_mess ?></td>
                                     <td><?= $x->tanggal_pesan ?></td>
+                                    <td><?= $x->waktu_post ?></td>
                                     <td><?= $x->waktu ?></td>
 
                             </tr>

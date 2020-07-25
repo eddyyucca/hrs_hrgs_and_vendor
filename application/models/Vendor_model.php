@@ -6,7 +6,10 @@ defined('BASEPATH') or exit('No direct script access allowed');
 class Vendor_model extends CI_Model
 {
 
-
+    public function get_order_v()
+    {
+        return $this->db->get('order_vendor')->result();
+    }
     public function lokasi()
     {
         return  $this->db->get('lokasi_pos')->result();
@@ -26,6 +29,38 @@ class Vendor_model extends CI_Model
     {
         $this->db->where('id_vendor', $id_vendor);
         return $this->db->get('vendor')->row();
+    }
+
+    public function laporan_v()
+    {
+        $this->db->order_by('id_order_v', 'ASC');
+        return $this->db->get('order_vendor')->result();
+    }
+    public function laporan_v_s($nama_v)
+    {
+        $this->db->order_by('id_order_v', 'ASC');
+        $this->db->where('nama_v', $nama_v);
+        $this->db->where('status_v', "3");
+        return $this->db->get('order_vendor')->result();
+    }
+    public function laporan_v_d($nama_v)
+    {
+        $this->db->order_by('id_order_v', 'ASC');
+        $this->db->where('nama_v', $nama_v);
+        $this->db->where('status_v', "2");
+        return $this->db->get('order_vendor')->result();
+    }
+    public function laporan_v_selesai($nama_v)
+    {
+        $this->db->order_by('id_order_v', 'ASC');
+        $this->db->where('nama_v', $nama_v);
+        $this->db->where('status_v', "1");
+        return $this->db->get('order_vendor')->result();
+    }
+    public function ubah_status_v($id_order_v, $data)
+    {
+        $this->db->where('id_order_v', $id_order_v);
+        $this->db->update('order_vendor', $data);
     }
 }
 
