@@ -161,6 +161,19 @@ class Vendor extends CI_Controller
 		$this->load->view('vendor/edit_lokasi', $data);
 		$this->load->view('template/footer');
 	}
+	public function selesai()
+	{
+		$data['judul'] = 'Order';
+		$data['alerts'] = $this->order_model->getDataJoin();
+		$data['alerts_3'] = $this->order_model->alerts_3();
+		$data['nama'] = $this->session->userdata('nama_user');
+		$data['level_akun'] = $this->session->userdata('level');
+		$data['laporan_v'] = $this->vendor_model->laporan_selesai();
+
+		$this->load->view('template/header', $data);
+		$this->load->view('vendor/selesai', $data);
+		$this->load->view('template/footer');
+	}
 
 	public function prosestambah_lokasi()
 	{

@@ -2,12 +2,10 @@
     <!-- Page Heading -->
     <div class="card shadow mb-4">
         <div class="card-header py-3">
-            <h6 class="m-0 font-weight-bold ">Order Baru</h6>
+            <h6 class="m-0 font-weight-bold ">Laporan Order</h6>
         </div>
         <div class="card-body">
             <div class="table-responsive">
-
-
                 <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                     <thead>
                         <tr>
@@ -19,13 +17,12 @@
                             <th>Tanggal Post</th>
                             <th>Jumlah</th>
                             <th>Status</th>
-
                         </tr>
                     </thead>
                     <tbody>
                         <?php
                         $nomor = 1;
-                        foreach ($laporan_p as $x) { ?>
+                        foreach ($laporan_v as $x) { ?>
                             <tr>
                                 <td><?= $nomor++; ?></td>
                                 <td><?= $x->nama_v; ?></td>
@@ -34,11 +31,16 @@
                                 <td><?= $x->waktu_pesan_v; ?></td>
                                 <td><?= $x->waktu_post_v; ?></td>
                                 <td><?= $x->jumlah_v; ?></td>
-                                <td align="center"> <a href="<?= base_url('pos/diterima_pos/') . $x->id_order_v; ?>" class="btn btn-primary">Diterima</i></a>
+                                <td align="center">
+                                    <?php if ($x->status_v == 1) { ?>
+                                        <div class="alert alert-success" role="alert">
+                                            Selesai
+                                        </div>
+                                    <?php } ?>
                                 </td>
-
                             </tr>
-                        <?php } ?>
+                        <?php
+                        } ?>
                     </tbody>
                 </table>
             </div>

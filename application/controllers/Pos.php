@@ -35,6 +35,16 @@ class Pos extends CI_Controller
 		$this->load->view('pos/index', $data);
 		$this->load->view('template_pos/footer');
 	}
+
+	public function diterima_pos($id_order_v)
+	{
+		$data = array(
+			"status_v" => "1"
+		);
+		$this->vendor_model->ubah_status_v($id_order_v, $data);
+		redirect('pos');
+	}
 }
+
 
 /* End of file Pos.php */

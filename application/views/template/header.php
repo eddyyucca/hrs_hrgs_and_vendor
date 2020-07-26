@@ -79,7 +79,7 @@
                   <a class="collapse-item" href="<?= base_url('vendor/akun_vendor') ?>">Akun Vendor</a>
                   <a class="collapse-item" href="<?= base_url('vendor/data_lokasi') ?>">Lokasi Pengantaran</a>
                   <a class="collapse-item" href="<?= base_url('vendor/order') ?>">Pesan Makanan</a>
-                  <a class="collapse-item" href="<?= base_url('vendor/index') ?>">Laporan Makanan</a>
+                  <a class="collapse-item" href="<?= base_url('vendor/selesai') ?>">Laporan Makanan</a>
                 </div>
               </div>
             </li>

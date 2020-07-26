@@ -18,10 +18,6 @@ class User_vendor extends CI_Controller
         $level_akun = $this->session->userdata('level');
         if ($level_akun != "vendor") {
             redirect('auth');
-        } elseif ($level_akun == "vendor") {
-            redirect('auth');
-        } elseif ($level_akun == "pos") {
-            redirect('auth');
         }
     }
 
