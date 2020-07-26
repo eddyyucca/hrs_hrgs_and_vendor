@@ -14,6 +14,14 @@
                             <td>Nama Lokasi</td>
                             <td><input type="text" name="nama_lokasi" class="form-control" placeholder="Nama Lokasi"></td>
                         </tr>
+                        <tr>
+                            <td>Username</td>
+                            <td><input type="text" name="username_p" class="form-control" placeholder="Username"></td>
+                        </tr>
+                        <tr>
+                            <td>Password</td>
+                            <td><input type="password" name="password_p" class="form-control" placeholder="Password"></td>
+                        </tr>
 
                     </table>
                     <hr>

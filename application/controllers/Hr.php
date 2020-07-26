@@ -30,6 +30,8 @@ class Hr extends CI_Controller
             redirect('auth');
         } elseif ($level_akun == "vendor") {
             redirect('auth');
+        } elseif ($level_akun == "pos") {
+            redirect('auth');
         }
     }
 

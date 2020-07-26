@@ -19,6 +19,10 @@ class Kepala_gs extends CI_Controller
             redirect('auth');
         } elseif ($level_akun == "admin_dep") {
             redirect('auth');
+        } elseif ($level_akun == "vendor") {
+            redirect('auth');
+        } elseif ($level_akun == "pos") {
+            redirect('auth');
         }
     }
 

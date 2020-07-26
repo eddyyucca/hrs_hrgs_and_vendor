@@ -20,7 +20,6 @@ class Auth extends CI_Controller
 	//------------------------------------------------------------------------//
 	//------------------------------------------------------------------------//
 	//------------------------------------------------------------------------//
-
 	public function user()
 	{
 		$data['judul'] = 'Login User';
@@ -29,7 +28,6 @@ class Auth extends CI_Controller
 		$this->load->view('auth/user', $data);
 		$this->load->view('auth/template/footer');
 	}
-
 	public function auth_user()
 	{
 		$this->form_validation->set_rules('id_kar', 'ID Karyawan', 'required');
@@ -84,7 +82,6 @@ class Auth extends CI_Controller
 	{
 		$username = $this->input->post('username');
 		$password =  md5($this->input->post('password'));
-
 		$cek = $this->auth_model->auth_vendor($username, $password);
 		if ($cek == true) {
 			foreach ($cek as $row);
@@ -102,12 +99,47 @@ class Auth extends CI_Controller
 			$this->load->view('auth/template/footer');
 		}
 	}
+
+	public function auth_pos()
+	{
+		$this->form_validation->set_rules('username', 'Username', 'required');
+		$this->form_validation->set_rules('password', 'Password', 'required');
+		if ($this->form_validation->run() == FALSE) {
+			$data['data'] = false;
+			$data['judul'] = 'Login Penerima';
+
+			$this->load->view('auth/template/header', $data);
+			$this->load->view('auth/pos', $data);
+			$this->load->view('auth/template/footer');
+		}
+	}
+
+	public function pos_cek()
+	{
+		$username_p = $this->input->post('username');
+		$password_p =  md5($this->input->post('password'));
+		$cek = $this->auth_model->auth_pos($username_p, $password_p);
+		if ($cek == true) {
+			foreach ($cek as $row);
+			$this->session->set_userdata('id_pos', $row->id_pos);
+			$this->session->set_userdata('nama_lokasi', $row->nama_lokasi);
+			$this->session->set_userdata('username_p', $row->username_p);
+			$this->session->set_userdata('level', 'pos');
+			redirect('pos');
+		} else {
+			$data['data'] = '<div class="alert alert-danger" role="alert">Password Salah !
+            </div>';
+			$data['judul'] = 'Login Penerima';
+			$this->load->view('auth/template/header', $data);
+			$this->load->view('auth/pos', $data);
+			$this->load->view('auth/template/footer');
+		}
+	}
 	//------------------------------------------------------------------------//
 	//------------------------------------------------------------------------//
 	//------------------------------------------------------------------------//
 	public function admin()
 	{
-
 		$id_kar = $this->input->post('id_kar');
 		$password =  md5($this->input->post('password'));
 

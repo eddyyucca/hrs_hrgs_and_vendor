@@ -19,8 +19,14 @@ class User_karyawan extends CI_Controller
         $this->load->model('jabatan_model');
         $this->load->library('form_validation');
 
-
+        $level_akun = $this->session->userdata('level');
         if ($this->session->userdata('level') == false) {
+            redirect('auth');
+        } elseif ($this->session->userdata('level') == "vendor") {
+            redirect('auth');
+        } elseif ($level_akun == "vendor") {
+            redirect('auth');
+        } elseif ($level_akun == "pos") {
             redirect('auth');
         }
     }

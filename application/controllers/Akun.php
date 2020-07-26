@@ -19,6 +19,10 @@ class Akun extends CI_Controller
 			redirect('hr');
 		} elseif ($level_akun == "admin_dep") {
 			redirect('auth');
+		} elseif ($level_akun == "vendor") {
+			redirect('auth');
+		} elseif ($level_akun == "pos") {
+			redirect('auth');
 		}
 		$data['nama'] = $this->session->userdata('nama_user');
 	}

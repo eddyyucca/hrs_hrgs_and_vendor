@@ -31,8 +31,9 @@ class Vendor_model extends CI_Model
         return $this->db->get('vendor')->row();
     }
 
-    public function laporan_v()
+    public function laporan_v($nama_v)
     {
+        $this->db->where('nama_v', $nama_v);
         $this->db->order_by('id_order_v', 'ASC');
         return $this->db->get('order_vendor')->result();
     }
@@ -62,6 +63,15 @@ class Vendor_model extends CI_Model
         $this->db->where('id_order_v', $id_order_v);
         $this->db->update('order_vendor', $data);
     }
+
+    public function laporan_p($nama_lokasi)
+    {
+        $this->db->order_by('id_order_v', 'ASC');
+        $this->db->where('lokasi_v', $nama_lokasi);
+        $this->db->where('status_v', "3");
+        return $this->db->get('order_vendor')->result();
+    }
 }
+
 
 /* End of file Vendor_model.php */

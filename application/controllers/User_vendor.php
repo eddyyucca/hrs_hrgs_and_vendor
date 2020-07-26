@@ -16,7 +16,11 @@ class User_vendor extends CI_Controller
         $this->load->model('vendor_model');
 
         $level_akun = $this->session->userdata('level');
-        if ($level_akun == false) {
+        if ($level_akun != "vendor") {
+            redirect('auth');
+        } elseif ($level_akun == "vendor") {
+            redirect('auth');
+        } elseif ($level_akun == "pos") {
             redirect('auth');
         }
     }
@@ -36,12 +40,26 @@ class User_vendor extends CI_Controller
         $this->load->view('user_vendor/index', $data);
         $this->load->view('templatex/footer');
     }
+    public function order_view_pending()
+    {
+        $data['judul'] = 'Vendor';
+        $data['alerts'] = $this->order_model->getDataJoin();
+        $data['alerts_3'] = $this->order_model->alerts_3();
+        $data['data'] = $this->sarana_model->getdata();
+        $data['nama'] = $this->session->userdata('nama_vendor');
+        $data['level_akun'] = $this->session->userdata('level');
+        $nama_v = $this->session->userdata('nama_vendor');
+        $data['laporan_v'] = $this->vendor_model->laporan_v_d($nama_v);
+
+        $this->load->view('templatex/header', $data);
+        $this->load->view('user_vendor/pending', $data);
+        $this->load->view('templatex/footer');
+    }
 
     public function order_pending($id_order_v)
     {
         $data = array(
             "status_v" => "2"
-
         );
         $this->vendor_model->ubah_status_v($id_order_v, $data);
         redirect('user_vendor');
@@ -55,6 +73,23 @@ class User_vendor extends CI_Controller
         $this->vendor_model->ubah_status_v($id_order_v, $data);
         redirect('user_vendor');
     }
+
+    public function laporan()
+    {
+        $data['judul'] = 'Vendor';
+        $data['alerts'] = $this->order_model->getDataJoin();
+        $data['alerts_3'] = $this->order_model->alerts_3();
+        $data['data'] = $this->sarana_model->getdata();
+        $data['nama'] = $this->session->userdata('nama_vendor');
+        $data['level_akun'] = $this->session->userdata('level');
+        $nama_v = $this->session->userdata('nama_vendor');
+        $data['laporan_v'] = $this->vendor_model->laporan_v($nama_v);
+
+        $this->load->view('templatex/header', $data);
+        $this->load->view('user_vendor/laporan', $data);
+        $this->load->view('templatex/footer');
+    }
 }
+
 
 /* End of file User_vendor.php */

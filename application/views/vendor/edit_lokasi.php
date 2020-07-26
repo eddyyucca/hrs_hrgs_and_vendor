@@ -5,7 +5,6 @@
         <div class="card-header py-3">
             <a href="<?= base_url('vendor') ?>"><i class="fas fa-arrow-circle-left"> Kembali</i></a>
         </div>
-
         <div class="card-body">
             <div class="table-responsive">
                 <div class="container">
@@ -15,7 +14,14 @@
                                 <td>Nama Lokasi</td>
                                 <td><input type="text" name="nama_lokasi" value="<?= $lokasi->nama_lokasi ?>" class="form-control" placeholder="Nama Lokasi"></td>
                             </tr>
-
+                            <tr>
+                                <td>Username</td>
+                                <td><input type="text" name="username_p" value="<?= $lokasi->username_p ?>" class="form-control" placeholder="Username"></td>
+                            </tr>
+                            <tr>
+                                <td>Password</td>
+                                <td><input type="password" name="password_p" value="<?= $lokasi->password_p ?>" class="form-control" placeholder="Password"></td>
+                            </tr>
                         </table>
                         <hr>
                         <button type="submit" class="btn btn-primary">Simpan</button>

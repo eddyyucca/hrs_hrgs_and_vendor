@@ -2,12 +2,10 @@
     <!-- Page Heading -->
     <div class="card shadow mb-4">
         <div class="card-header py-3">
-            <h6 class="m-0 font-weight-bold ">Akun Vendor</h6>
+            <h6 class="m-0 font-weight-bold ">Order Baru</h6>
         </div>
         <div class="card-body">
             <div class="table-responsive">
-
-
                 <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                     <thead>
                         <tr>
@@ -19,7 +17,6 @@
                             <th>Tanggal Post</th>
                             <th>Jumlah</th>
                             <th>Status</th>
-
                         </tr>
                     </thead>
                     <tbody>
@@ -34,11 +31,10 @@
                                 <td><?= $x->waktu_pesan_v; ?></td>
                                 <td><?= $x->waktu_post_v; ?></td>
                                 <td><?= $x->jumlah_v; ?></td>
-                                <td align="center"> <a href="<?= base_url('user_vendor/order_pending/') . $x->id_order_v; ?>" class="btn btn-primary">Diterima</i></a>
-
+                                <td align="center">
+                                    <a href="<?= base_url('user_vendor/order_pending/') . $x->id_order_v; ?>" class="btn btn-primary">Diterima</i></a>
                                     <a href="<?= base_url('user_vendor/ditolak/') . $x->id_order_v; ?>" class="btn btn-danger">Ditolak</i></a>
                                 </td>
-
                             </tr>
                         <?php } ?>
                     </tbody>

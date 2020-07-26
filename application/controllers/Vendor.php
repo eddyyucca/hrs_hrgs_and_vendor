@@ -18,6 +18,10 @@ class Vendor extends CI_Controller
 			redirect('hr');
 		} elseif ($level_akun == "admin_dep") {
 			redirect('auth');
+		} elseif ($level_akun == "vendor") {
+			redirect('auth');
+		} elseif ($level_akun == "pos") {
+			redirect('auth');
 		}
 	}
 
@@ -161,7 +165,9 @@ class Vendor extends CI_Controller
 	public function prosestambah_lokasi()
 	{
 		$data = array(
-			"nama_lokasi" => $this->input->post('nama_lokasi')
+			"nama_lokasi" => $this->input->post('nama_lokasi'),
+			"username_p" => $this->input->post('username_p'),
+			"password_p" => md5($this->input->post('password_p'))
 		);
 		$this->db->insert('lokasi_pos', $data);
 
@@ -171,7 +177,9 @@ class Vendor extends CI_Controller
 	public function prosesupdate_lokasi($id_lokasi)
 	{
 		$data = array(
-			"nama_lokasi" => $this->input->post('nama_lokasi')
+			"nama_lokasi" => $this->input->post('nama_lokasi'),
+			"username_p" => $this->input->post('username_p'),
+			"password_p" => md5($this->input->post('password_p'))
 		);
 		$this->db->where('id_pos', $id_lokasi);
 		$this->db->update('lokasi_pos', $data);

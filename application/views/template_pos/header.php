@@ -54,9 +54,7 @@
 					</a>
 					<div id="makanan" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
 						<div class="bg-white py-2 collapse-inner rounded">
-							<a class="collapse-item" href="<?= base_url('user_vendor/index') ?>">Order Makanan</a>
-							<a class="collapse-item" href="<?= base_url('user_vendor/order_view_pending') ?>">Order Pending</a>
-							<a class="collapse-item" href="<?= base_url('user_vendor/laporan') ?>">Laporan Selesai</a>
+							<a class="collapse-item" href="<?= base_url('pos/index') ?>">Terima Order</a>
 						</div>
 					</div>
 				</li>

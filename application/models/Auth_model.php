@@ -71,6 +71,20 @@ class Auth_model extends CI_Model
 			return false;
 		}
 	}
+	public function auth_pos($username_p, $password_p)
+	{
+		$this->db->select('*');
+		$this->db->from('lokasi_pos');
+		$this->db->where('username_p', $username_p);
+		$this->db->where('password_p', $password_p);
+		$query = $this->db->get();
+
+		if ($query->num_rows() == 1) {
+			return $query->result();
+		} else {
+			return false;
+		}
+	}
 }
 
 /* End of file Auth_model.php */
