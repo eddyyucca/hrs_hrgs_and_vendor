@@ -2,7 +2,7 @@
    <footer class="sticky-footer bg-white">
      <div class="container my-auto">
        <div class="copyright text-center my-auto">
-         <span>Copyright &copy; <a href="http://www.majatekno.id">Majatekno.id 2019</a></span>
+         <span>Copyright &copy; <a href="">HRGS-HRSBRE 2020</a></span>
        </div>
      </div>
    </footer>
