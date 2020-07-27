@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 26 Jul 2020 pada 08.44
+-- Waktu pembuatan: 27 Jul 2020 pada 13.44
 -- Versi server: 10.4.8-MariaDB
 -- Versi PHP: 7.3.10
 
@@ -677,7 +677,8 @@ INSERT INTO `lokasi_pos` (`id_pos`, `nama_lokasi`, `username_p`, `password_p`) V
 (1, 'lokasi 1 22', 'lokasi1', '202cb962ac59075b964b07152d234b70'),
 (2, 'tambang', 'tambang', 'd41d8cd98f00b204e9800998ecf8427e'),
 (3, 'tambang1', 'pos', 'd41d8cd98f00b204e9800998ecf8427e'),
-(4, 'office', 'office', 'e72f4545eb68c96c754f91fc01573517');
+(4, 'office', 'office', 'e72f4545eb68c96c754f91fc01573517'),
+(5, 'baru', 'baru', '202cb962ac59075b964b07152d234b70');
 
 -- --------------------------------------------------------
 
@@ -741,6 +742,8 @@ CREATE TABLE `order_vendor` (
   `waktu_pesan_v` varchar(10) NOT NULL,
   `waktu_post_v` varchar(50) NOT NULL,
   `jumlah_v` varchar(100) NOT NULL,
+  `keterangan_v` text NOT NULL,
+  `keterangan_p` text NOT NULL,
   `status_v` varchar(10) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
@@ -748,9 +751,14 @@ CREATE TABLE `order_vendor` (
 -- Dumping data untuk tabel `order_vendor`
 --
 
-INSERT INTO `order_vendor` (`id_order_v`, `nama_v`, `shift_v`, `lokasi_v`, `waktu_pesan_v`, `waktu_post_v`, `jumlah_v`, `status_v`) VALUES
-(1, 'ridho catering 1', ' 1', 'lokasi 1 22', '2020-07-23', '2020-23-07', '11', '1'),
-(2, 'ridho catering 1', ' 1', 'lokasi 1 22', '2020-07-25', '2020-24-07', '3', '1');
+INSERT INTO `order_vendor` (`id_order_v`, `nama_v`, `shift_v`, `lokasi_v`, `waktu_pesan_v`, `waktu_post_v`, `jumlah_v`, `keterangan_v`, `keterangan_p`, `status_v`) VALUES
+(1, 'ridho catering 1', ' 1', 'lokasi 1 22', '2020-07-23', '2020-23-07', '11', '', '', '1'),
+(2, 'ridho catering 1', ' 1', 'lokasi 1 22', '2020-07-25', '2020-24-07', '3', '', '', '1'),
+(6, 'ridho catering 1', '2', 'lokasi 1 22', '2020-07-27', '2020-27-07 / 04:12:52 am', '100', 'eng 100', '', '2'),
+(7, '', ' 1', '', '', '2020-27-07 / 04:21:45 am', '', '', '', '3'),
+(8, 'tes 123', ' 1', 'tambang1', '2020-07-28', '2020-27-07 / 04:59:38 am', '11', 'eng 100 eng 100 eng 100 eng 100 eng 100 ', '', '3'),
+(9, 'tes 123', '2', 'office', '2020-07-28', '2020-27-07 / 11:24:39 am', '11', 'eng 100 eng 100 eng 100 eng 100 eng 100 ', '', '3'),
+(10, 'baru', '2', 'baru', '2020-07-27', '2020-27-07 / 11:27:18 am', '2', 'eng 100', 'ok semua', '1');
 
 -- --------------------------------------------------------
 
@@ -932,7 +940,8 @@ CREATE TABLE `vendor` (
 
 INSERT INTO `vendor` (`id_vendor`, `nama_vendor`, `username_v`, `password`) VALUES
 (2, 'ridho catering 1', 'ridho', '202cb962ac59075b964b07152d234b70'),
-(3, 'tes 123', 'tes', '202cb962ac59075b964b07152d234b70');
+(3, 'tes 123', 'tes', '202cb962ac59075b964b07152d234b70'),
+(4, 'baru', 'baru', '202cb962ac59075b964b07152d234b70');
 
 --
 -- Indexes for dumped tables
@@ -1216,7 +1225,7 @@ ALTER TABLE `jabatan`
 -- AUTO_INCREMENT untuk tabel `lokasi_pos`
 --
 ALTER TABLE `lokasi_pos`
-  MODIFY `id_pos` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id_pos` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT untuk tabel `order_makanan`
@@ -1234,7 +1243,7 @@ ALTER TABLE `order_status`
 -- AUTO_INCREMENT untuk tabel `order_vendor`
 --
 ALTER TABLE `order_vendor`
-  MODIFY `id_order_v` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id_order_v` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- AUTO_INCREMENT untuk tabel `overtime`
@@ -1270,7 +1279,7 @@ ALTER TABLE `user_login`
 -- AUTO_INCREMENT untuk tabel `vendor`
 --
 ALTER TABLE `vendor`
-  MODIFY `id_vendor` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id_vendor` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

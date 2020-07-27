@@ -39,16 +39,21 @@
                                 <td>: <?= $laporan_v->jumlah_v ?> </td>
                             </tr>
 
-                            <tr>
-                                <td>Catatan Post</td>
+                            <form action="<?= base_url('pos/diterima_pos/') . $laporan_v->id_order_v ?>" method="post">
+                                <tr>
+                                    <td>Catatan Post</td>
 
-                                <td>
-                                    <form action="<?= base_url('pos/diterima_pos/') . $laporan_v->id_order_v ?>" method="post">
+                                    <td>
                                         <textarea name="keterangan_p" class="form-control" cols="30" rows="10"></textarea>
-                                        <button class="btn btn-primary">Simpan</button>
-                                    </form>
-                                </td>
-                            </tr>
+
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <td></td>
+                                    <td> <button class="btn btn-primary">Simpan</button></td>
+                                </tr>
+                            </form>
                         </table>
 
                     </div>
