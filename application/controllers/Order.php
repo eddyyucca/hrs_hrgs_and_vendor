@@ -10,7 +10,7 @@ class Order extends CI_Controller
         parent::__construct();
         $this->load->model('order_model');
         $this->load->model('akun_model');
-
+        ini_set('date.timezone', 'Asia/Kuala_Lumpur');
         $level_akun = $this->session->userdata('level');
         if ($level_akun != ("admin") <= ("kepala_gs")) {
             redirect('auth');

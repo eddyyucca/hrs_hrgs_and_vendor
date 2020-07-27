@@ -502,11 +502,63 @@
                                 </tr>
                                 <tr>
                                     <td>Alamat SIm C</td>
-                                    <td>: <?= $data["masa_beralamat_sim_a"] ?> </td>
+                                    <td>: <?= $data["alamat_sim_a"] ?> </td>
                                 </tr>
                                 <tr>
                                     <td>Masa Berlaku SIm C</td>
-                                    <td>: <?= $data["masa_beralamat_sim_claku_sim_a"] ?> </td>
+                                    <td>: <?= $data["masa_berlaku_sim_c"] ?> </td>
+                                </tr>
+                                <tr>
+                                    <td>No NPWP</td>
+                                    <td>: <?= $data["no_npwp"] ?> </td>
+                                </tr>
+                                <tr>
+                                    <td>No BPJS Tenagakerja</td>
+                                    <td>: <?= $data["no_bpjs_tenagakerja"] ?> </td>
+                                </tr>
+                                <tr>
+                                    <td>No BPJS Kesehatan</td>
+                                    <td>: <?= $data["no_bpjs_kes"] ?> </td>
+                                </tr>
+                                <tr>
+                                    <td>No Passport</td>
+                                    <td>: <?= $data["no_passport"] ?> </td>
+                                </tr>
+                                <tr>
+                                    <td>Alamat Passport</td>
+                                    <td>: <?= $data["alamat_passport"] ?> </td>
+                                </tr>
+                                <tr>
+                                    <td>Masa Berlaku Passport</td>
+                                    <td>: <?= $data["masa_berlaku_passport"] ?> </td>
+                                </tr>
+                                <tr>
+                                    <td>Tinggi Badan</td>
+                                    <td>: <?= $data["tinggi_badan"] ?> </td>
+                                </tr>
+                                <tr>
+                                    <td>Berat Badan</td>
+                                    <td>: <?= $data["berat_badan"] ?> </td>
+                                </tr>
+                                <tr>
+                                    <td>Rhesus</td>
+                                    <td>: <?= $data["rhesus"] ?> </td>
+                                </tr>
+                                <tr>
+                                    <td>Ukuran Baju</td>
+                                    <td>: <?= $data["ukuran_baju"] ?> </td>
+                                </tr>
+                                <tr>
+                                    <td>Ukuran Celana</td>
+                                    <td>: <?= $data["ukuran_celana"] ?> </td>
+                                </tr>
+                                <tr>
+                                    <td>Ukuran Sepatu</td>
+                                    <td>: <?= $data["ukuran_sepatu"] ?> </td>
+                                </tr>
+                                <tr>
+                                    <td>Hobi</td>
+                                    <td>: <?= $data["hobi"] ?> </td>
                                 </tr>
                             </table>
                         </div>

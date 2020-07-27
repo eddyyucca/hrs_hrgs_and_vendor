@@ -14,7 +14,7 @@ class User_vendor extends CI_Controller
         $this->load->model('seragam_model');
         $this->load->model('sarana_model');
         $this->load->model('vendor_model');
-
+        ini_set('date.timezone', 'Asia/Kuala_Lumpur');
         $level_akun = $this->session->userdata('level');
         if ($level_akun != "vendor") {
             redirect('auth');

@@ -18,7 +18,7 @@ class User_karyawan extends CI_Controller
         $this->load->model('departemen_model');
         $this->load->model('jabatan_model');
         $this->load->library('form_validation');
-
+        ini_set('date.timezone', 'Asia/Kuala_Lumpur');
         $level_akun = $this->session->userdata('level');
         if ($this->session->userdata('level') == false) {
             redirect('auth');

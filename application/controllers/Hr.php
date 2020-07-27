@@ -23,7 +23,7 @@ class Hr extends CI_Controller
         $this->load->model('karyawan_model');
         $this->load->library('form_validation');
 
-
+        ini_set('date.timezone', 'Asia/Kuala_Lumpur');
 
         $level_akun = $this->session->userdata('level');
         if ($level_akun != ("hr_admin") <= ("super_admin")) {

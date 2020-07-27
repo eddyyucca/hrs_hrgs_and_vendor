@@ -10,7 +10,7 @@ class Vendor extends CI_Controller
 		parent::__construct();
 		$this->load->model('order_model');
 		$this->load->model('vendor_model');
-
+		ini_set('date.timezone', 'Asia/Kuala_Lumpur');
 		$level_akun = $this->session->userdata('level');
 		if ($level_akun != ("admin") <= ("kepala_gs")) {
 			redirect('auth');
@@ -235,7 +235,7 @@ class Vendor extends CI_Controller
 			"shift_v" => $this->input->post('shift_v'),
 			"lokasi_v" => $this->input->post('lokasi_v'),
 			"waktu_pesan_v" => $this->input->post('waktu_pesan_v'),
-			"waktu_post_v" => date('Y-d-m / H:i:s a'),
+			"waktu_post_v" => date('Y-d-m  H:i:s a'),
 			"jumlah_v" => $this->input->post('jumlah_v'),
 			"keterangan_v" => $this->input->post('keterangan_v'),
 			"status_v" => "3"

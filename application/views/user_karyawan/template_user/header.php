@@ -46,7 +46,20 @@
 					Interface
 				</div>
 				<!-- Nav Item - Pages Collapse Menu -->
+				<li class="nav-item">
+					<a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
+						<i class="fas fa-sign-in-alt"></i>
+						<span>Profil</span>
+					</a>
+					<div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+						<div class="bg-white py-2 collapse-inner rounded">
+							<a class="collapse-item" href="<?= base_url('user_karyawan/password') ?>">Ubah Password</a>
+							<a class="collapse-item" href="<?= base_url('user_karyawan/tambah_data_diri') ?>">Data Diri</a>
 
+
+						</div>
+					</div>
+				</li>
 				<li class="nav-item">
 					<a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#makanan" aria-expanded="true" aria-controls="makanan">
 						<i class="fas fa-drumstick-bite"></i>
