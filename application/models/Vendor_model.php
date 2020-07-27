@@ -101,6 +101,11 @@ class Vendor_model extends CI_Model
 
         return $this->db->get('order_vendor')->result();
     }
+    public function get_laporan_v($id_order)
+    {
+        $this->db->where('id_order_v', $id_order);
+        return $this->db->get('order_vendor')->row();
+    }
 
     public function all_laporan_date_v($nama_v, $date)
     {

@@ -39,10 +39,28 @@ class Pos extends CI_Controller
 	public function diterima_pos($id_order_v)
 	{
 		$data = array(
-			"status_v" => "1"
+			"status_v" => "1",
+			"keterangan_p" => $this->input->post('keterangan_p')
+
 		);
 		$this->vendor_model->ubah_status_v($id_order_v, $data);
 		redirect('pos');
+	}
+
+	public function view($id_order)
+	{
+		$data['judul'] = 'Vendor';
+		$data['alerts'] = $this->order_model->getDataJoin();
+		$data['alerts_3'] = $this->order_model->alerts_3();
+
+		$data['nama'] = $this->session->userdata('nama_vendor');
+		$data['level_akun'] = $this->session->userdata('level');
+		// $nama_v = $this->session->userdata('nama_vendor');
+		$data['laporan_v'] = $this->vendor_model->get_laporan_v($id_order);
+
+		$this->load->view('template_pos/header', $data);
+		$this->load->view('pos/view', $data);
+		$this->load->view('template_pos/footer');
 	}
 }
 

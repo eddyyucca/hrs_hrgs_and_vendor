@@ -36,7 +36,7 @@
                                 <td><?= $x->waktu_post_v; ?></td>
                                 <td><?= $x->keterangan_v; ?></td>
                                 <td><?= $x->jumlah_v; ?></td>
-                                <td align="center"> <a href="<?= base_url('pos/diterima_pos/') . $x->id_order_v; ?>" class="btn btn-primary">Diterima</i></a>
+                                <td align="center"> <a href="<?= base_url('pos/view/') . $x->id_order_v; ?>" class="btn btn-primary">View</i></a>
                                 </td>
 
                             </tr>

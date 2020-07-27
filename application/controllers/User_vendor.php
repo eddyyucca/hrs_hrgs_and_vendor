@@ -85,6 +85,21 @@ class User_vendor extends CI_Controller
         $this->load->view('user_vendor/laporan', $data);
         $this->load->view('templatex/footer');
     }
+    public function view($id_order)
+    {
+        $data['judul'] = 'Vendor';
+        $data['alerts'] = $this->order_model->getDataJoin();
+        $data['alerts_3'] = $this->order_model->alerts_3();
+        $data['data'] = $this->sarana_model->getdata();
+        $data['nama'] = $this->session->userdata('nama_vendor');
+        $data['level_akun'] = $this->session->userdata('level');
+        $nama_v = $this->session->userdata('nama_vendor');
+        $data['data'] = $this->vendor_model->get_laporan_v($nama_v, $id_order);
+
+        $this->load->view('templatex/header', $data);
+        $this->load->view('user_vendor/laporan', $data);
+        $this->load->view('templatex/footer');
+    }
     public function laporan_date()
     {
         $data['judul'] = 'Vendor';
