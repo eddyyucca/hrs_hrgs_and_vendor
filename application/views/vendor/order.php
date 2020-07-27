@@ -45,12 +45,16 @@
                             </tr>
                             <tr>
                                 <td>Jumlah</td>
-                                <td> <input type="input" name="jumlah_v" class="form-control"></td>
+                                <td> <input type="text" name="jumlah_v" class="form-control"></td>
+                            </tr>
+
+                            <tr>
+                                <td>Keterangan</td>
+                                <td> <input type="text" name="keterangan_v" class="form-control"></td>
                             </tr>
                             <td>
                                 <button class="btn btn-primary">Simpan</button>
                             </td>
-
                             </tr>
                         </table>
                     </form>

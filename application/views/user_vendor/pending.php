@@ -15,6 +15,7 @@
                             <th>Lokasi</th>
                             <th>Tanggal</th>
                             <th>Tanggal Post</th>
+                            <th>Ket</th>
                             <th>Jumlah</th>
                             <th>Status</th>
                         </tr>
@@ -30,6 +31,7 @@
                                 <td><?= $x->lokasi_v; ?></td>
                                 <td><?= $x->waktu_pesan_v; ?></td>
                                 <td><?= $x->waktu_post_v; ?></td>
+                                <td><?= $x->keterangan_v; ?></td>
                                 <td><?= $x->jumlah_v; ?></td>
                                 <td align="center">
                                     <?php if ($x->status_v == 2) { ?>

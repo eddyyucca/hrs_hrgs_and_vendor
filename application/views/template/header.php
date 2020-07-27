@@ -60,11 +60,9 @@
               </a>
               <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
                 <div class="bg-white py-2 collapse-inner rounded">
-                  <a class="collapse-item" href="<?= base_url('atk/view_data') ?>">ATK</a>
-                  <a class="collapse-item" href="<?= base_url('sarana/index') ?>">SARANA</a>
-                  <a class="collapse-item" href="<?= base_url('catering/index') ?>">CATERING</a>
+
                   <a class="collapse-item" href="<?= base_url('mess/index') ?>">MESS</a>
-                  <a class="collapse-item" href="<?= base_url('seragam/index') ?>">SERAGAM</a>
+
                 </div>
               </div>
             </li>
@@ -87,49 +85,8 @@
             <!-- Divider -->
             <hr class="sidebar-divider d-none d-md-block">
 
-            <?php if ($level_akun == "admin") { ?>
-              <li class="nav-item">
-                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePages" aria-expanded="true" aria-controls="collapsePages">
-                  <i class="fas fa-fw fa-folder"></i>
-                  <span>Order</span>
-                </a>
-                <div id="collapsePages" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
-                  <div class="bg-white py-2 collapse-inner rounded">
-                    <a class="collapse-item" href="<?= base_url('order') ?>">Order Tunggu</a>
 
-                  </div>
-                </div>
-              </li>
-            <?php } elseif ($level_akun == "kepala_gs") { ?>
-              <li class="nav-item">
-                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePages" aria-expanded="true" aria-controls="collapsePages">
-                  <i class="fas fa-fw fa-folder"></i>
-                  <span>Order</span>
-                </a>
-                <div id="collapsePages" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
-                  <div class="bg-white py-2 collapse-inner rounded">
-                    <a class="collapse-item" href="<?= base_url('kepala_gs/order_persetujuan') ?>">Order Persetujuan</a>
-                    <a class="collapse-item" href="<?= base_url('order') ?>">Order Tunggu</a>
 
-                  </div>
-                </div>
-              </li>
-
-            <?php } ?>
-            <li class="nav-item">
-              <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo2" aria-expanded="true" aria-controls="collapseTwo2">
-                <i class="fas fa-table"></i>
-                <span>Laporan Order ATK</span>
-              </a>
-              <div id="collapseTwo2" class="collapse" aria-labelledby="headingTwo2" data-parent="#accordionSidebar">
-                <div class="bg-white py-2 collapse-inner rounded">
-                  <a class="collapse-item" href="<?= base_url('order/laporan_bulanan') ?>">Laporan Order Bulanan</a>
-                  <a class="collapse-item" href="<?= base_url('order/laporan_departemen') ?>">Laporan Departemen</a>
-                  <a class="collapse-item" href="<?= base_url('order/order_selesai') ?>">Order Selesai</a>
-                  <a class="collapse-item" href="<?= base_url('order/order_ditolak') ?>">Order Ditolak</a>
-                </div>
-              </div>
-            </li>
             <!-- Divider -->
 
             <!-- Sidebar Toggler (Sidebar) -->
@@ -180,73 +137,6 @@
               </li>
 
               <!-- Nav Item - Alerts -->
-              <li class="nav-item dropdown no-arrow mx-1">
-                <a class="nav-link dropdown-toggle" href="#" id="alertsDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                  <i class="fas fa-bell fa-fw"></i>
-                  <!-- Counter - Alerts -->
-                  <?php if ($level_akun == "admin") { ?>
-                    <span class="badge badge-danger badge-counter"><?= count($alerts) ?></span>
-                  <?php  } elseif ($level_akun == "kepala_gs") { ?>
-                    <span class="badge badge-danger badge-counter"><?= count($alerts_3) ?></span>
-                  <?php } ?>
-                </a>
-                <!-- Dropdown - Alerts -->
-                <?php if ($level_akun == "admin") { ?>
-
-                  <div class="dropdown-list dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="alertsDropdown">
-                    <h6 class="dropdown-header">
-                      Info
-                    </h6>
-                    <?php
-                    $no = 1;
-                    foreach ($alerts as $x) :
-                      if ($no++ > 4) break;
-                    ?>
-                      <a class="dropdown-item d-flex align-items-center" href="<?= base_url('order/view/') . $x->id_ker ?>">
-                        <div class="mr-3">
-                          <div class="icon-circle bg-primary">
-                            <i class="fas fa-file-alt text-white"></i>
-                          </div>
-                        </div>
-                        <div>
-                          <div class="small text-gray-500"><?= $x->tanggal ?></div>
-                          <span class="font-weight-bold"><?= $x->nama_dep ?></span>
-                        </div>
-                      </a>
-                    <?php endforeach ?>
-                    <a class="dropdown-item text-center small text-gray-500" href="<?= base_url('order') ?>">Show All Alerts</a>
-                  </div>
-
-                <?php } elseif ($level_akun == "kepala_gs") { ?>
-
-                  <div class="dropdown-list dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="alertsDropdown">
-                    <h6 class="dropdown-header">
-                      Info
-                    </h6>
-                    <?php
-                    $no = 1;
-                    foreach ($alerts_3 as $x) :
-                      if ($no++ > 4) break;
-                    ?>
-                      <a class="dropdown-item d-flex align-items-center" href="<?= base_url('kepala_gs/view/') . $x->id_ker ?>">
-                        <div class="mr-3">
-                          <div class="icon-circle bg-primary">
-                            <i class="fas fa-file-alt text-white"></i>
-                          </div>
-                        </div>
-                        <div>
-                          <div class="small text-gray-500"><?= $x->tanggal ?></div>
-                          <span class="font-weight-bold"><?= $x->nama_dep ?></span>
-                        </div>
-                      </a>
-                    <?php endforeach ?>
-                    <a class="dropdown-item text-center small text-gray-500" href="<?= base_url('order') ?>">Show All Alerts</a>
-                  </div>
-
-                <?php } ?>
-
-
-              </li>
 
               <!-- Nav Item - User Information -->
               <li class="nav-item dropdown no-arrow">

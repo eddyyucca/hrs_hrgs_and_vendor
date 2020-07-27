@@ -33,20 +33,20 @@ class Vendor_model extends CI_Model
 
     public function laporan_v($nama_v)
     {
+        $this->db->order_by('id_order_v', 'DESC');
         $this->db->where('nama_v', $nama_v);
-        $this->db->order_by('id_order_v', 'ASC');
         return $this->db->get('order_vendor')->result();
     }
     public function laporan_v_s($nama_v)
     {
-        $this->db->order_by('id_order_v', 'ASC');
+        $this->db->order_by('id_order_v', 'DESC');
         $this->db->where('nama_v', $nama_v);
         $this->db->where('status_v', "3");
         return $this->db->get('order_vendor')->result();
     }
     public function laporan_v_d($nama_v)
     {
-        $this->db->order_by('id_order_v', 'ASC');
+        $this->db->order_by('id_order_v', 'DESC');
         $this->db->where('nama_v', $nama_v);
         $this->db->where('status_v', "2");
         return $this->db->get('order_vendor')->result();
@@ -73,9 +73,41 @@ class Vendor_model extends CI_Model
     }
     public function laporan_selesai()
     {
-        $this->db->order_by('id_order_v', 'ASC');
+        $this->db->order_by('id_order_v', 'DESC');
 
         $this->db->where('status_v', "1");
+        return $this->db->get('order_vendor')->result();
+    }
+
+    public function all_laporan()
+    {
+        $this->db->order_by('id_order_v', 'DESC');
+        // $this->db->where('waktu_pesan_v', $tanggal);
+
+        return $this->db->get('order_vendor')->result();
+    }
+    public function all_laporan_date($date)
+    {
+        $this->db->order_by('id_order_v', 'DESC');
+        $this->db->where('waktu_pesan_v', $date);
+
+        return $this->db->get('order_vendor')->result();
+    }
+    public function all_laporan_v($nama_v)
+    {
+        $this->db->order_by('id_order_v', 'DESC');
+        // $this->db->where('waktu_pesan_v', $tanggal);
+        $this->db->where('nama_v', $nama_v);
+
+        return $this->db->get('order_vendor')->result();
+    }
+
+    public function all_laporan_date_v($nama_v, $date)
+    {
+        $this->db->order_by('id_order_v', 'DESC');
+        $this->db->where('waktu_pesan_v', $date);
+        $this->db->where('nama_v', $nama_v);
+
         return $this->db->get('order_vendor')->result();
     }
 }

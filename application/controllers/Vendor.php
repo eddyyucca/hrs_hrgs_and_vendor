@@ -168,7 +168,22 @@ class Vendor extends CI_Controller
 		$data['alerts_3'] = $this->order_model->alerts_3();
 		$data['nama'] = $this->session->userdata('nama_user');
 		$data['level_akun'] = $this->session->userdata('level');
-		$data['laporan_v'] = $this->vendor_model->laporan_selesai();
+		$data['laporan_v'] = $this->vendor_model->all_laporan();
+
+		$this->load->view('template/header', $data);
+		$this->load->view('vendor/selesai', $data);
+		$this->load->view('template/footer');
+	}
+	public function selesai_date()
+	{
+		$data['judul'] = 'Order';
+		$data['alerts'] = $this->order_model->getDataJoin();
+		$data['alerts_3'] = $this->order_model->alerts_3();
+		$data['nama'] = $this->session->userdata('nama_user');
+		$data['level_akun'] = $this->session->userdata('level');
+		$date = $this->input->post('date');
+
+		$data['laporan_v'] = $this->vendor_model->all_laporan_date($date);
 
 		$this->load->view('template/header', $data);
 		$this->load->view('vendor/selesai', $data);
@@ -222,11 +237,12 @@ class Vendor extends CI_Controller
 			"waktu_pesan_v" => $this->input->post('waktu_pesan_v'),
 			"waktu_post_v" => date('Y-d-m / H:i:s a'),
 			"jumlah_v" => $this->input->post('jumlah_v'),
-			"jumlah_v" => "3"
+			"keterangan_v" => $this->input->post('keterangan_v'),
+			"status_v" => "3"
 		);
 
 		$this->db->insert('order_vendor', $data);
-		redirect('vendor');
+		redirect('vendor/selesai');
 	}
 }
 
