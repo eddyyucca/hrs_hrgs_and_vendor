@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 27 Jul 2020 pada 13.44
+-- Waktu pembuatan: 28 Jul 2020 pada 19.09
 -- Versi server: 10.4.8-MariaDB
 -- Versi PHP: 7.3.10
 
@@ -704,7 +704,8 @@ INSERT INTO `order_makanan` (`id_order_mak`, `id_kar`, `tanggal_pesan`, `waktu_p
 (8, '2199806251', '2020-07-05', '', 'SINERGI 3', 'Pagi,Siang,'),
 (9, '2199806251', '2020-07-08', '', 'SINERGI 4', 'Pagi,Siang,'),
 (10, '1199503122', '2020-07-11', '', 'SINERGI 3', 'Pagi,Siang,'),
-(11, '2199806251', '2020-07-26', '2020-07-26 / 08:27:0', 'LAHAN PARKIR TAMBANG', 'Pagi,Siang,');
+(11, '2199806251', '2020-07-26', '2020-07-26 / 08:27:0', 'LAHAN PARKIR TAMBANG', 'Pagi,Siang,'),
+(12, '1202005081', '2020-07-29', '2020-07-29 / 00:29:4', 'SINERGI 3', 'Pagi,Siang,');
 
 -- --------------------------------------------------------
 
@@ -752,13 +753,9 @@ CREATE TABLE `order_vendor` (
 --
 
 INSERT INTO `order_vendor` (`id_order_v`, `nama_v`, `shift_v`, `lokasi_v`, `waktu_pesan_v`, `waktu_post_v`, `jumlah_v`, `keterangan_v`, `keterangan_p`, `status_v`) VALUES
-(1, 'ridho catering 1', ' 1', 'lokasi 1 22', '2020-07-23', '2020-23-07', '11', '', '', '1'),
-(2, 'ridho catering 1', ' 1', 'lokasi 1 22', '2020-07-25', '2020-24-07', '3', '', '', '1'),
-(6, 'ridho catering 1', '2', 'lokasi 1 22', '2020-07-27', '2020-27-07 / 04:12:52 am', '100', 'eng 100', '', '2'),
-(7, '', ' 1', '', '', '2020-27-07 / 04:21:45 am', '', '', '', '3'),
-(8, 'tes 123', ' 1', 'tambang1', '2020-07-28', '2020-27-07 / 04:59:38 am', '11', 'eng 100 eng 100 eng 100 eng 100 eng 100 ', '', '3'),
-(9, 'tes 123', '2', 'office', '2020-07-28', '2020-27-07 / 11:24:39 am', '11', 'eng 100 eng 100 eng 100 eng 100 eng 100 ', '', '3'),
-(10, 'baru', '2', 'baru', '2020-07-27', '2020-27-07 / 11:27:18 am', '2', 'eng 100', 'ok semua', '1');
+(16, 'baru', '2', 'baru', '2020-07-29', '2020-29-07  00:50:12 am', '2', 'eng 1 pro 1', 'ok semua', '1'),
+(17, 'baru', '2', 'baru', '2020-07-29', '2020-29-07  01:04:36 am', '11', 'eng 100 eng 100 eng 100 eng 100 eng 100 ', '', '5'),
+(18, 'baru', ' 1', 'baru', '2020-07-29', '2020-29-07  01:05:03 am', '2', 'eng 100', '', '2');
 
 -- --------------------------------------------------------
 
@@ -1231,7 +1228,7 @@ ALTER TABLE `lokasi_pos`
 -- AUTO_INCREMENT untuk tabel `order_makanan`
 --
 ALTER TABLE `order_makanan`
-  MODIFY `id_order_mak` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `id_order_mak` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
 -- AUTO_INCREMENT untuk tabel `order_status`
@@ -1243,7 +1240,7 @@ ALTER TABLE `order_status`
 -- AUTO_INCREMENT untuk tabel `order_vendor`
 --
 ALTER TABLE `order_vendor`
-  MODIFY `id_order_v` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `id_order_v` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
 
 --
 -- AUTO_INCREMENT untuk tabel `overtime`

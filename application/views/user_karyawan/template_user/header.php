@@ -68,6 +68,7 @@
 					<div id="makanan" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
 						<div class="bg-white py-2 collapse-inner rounded">
 							<a class="collapse-item" href="<?= base_url('user_karyawan/makanan') ?>">Order Makanan</a>
+							<a class="collapse-item" href="<?= base_url('user_karyawan/order_makanan') ?>">riwayat Order</a>
 						</div>
 					</div>
 				</li>

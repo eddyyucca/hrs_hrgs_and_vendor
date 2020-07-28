@@ -17,6 +17,7 @@ class User_karyawan extends CI_Controller
         $this->load->model('karyawan_model');
         $this->load->model('departemen_model');
         $this->load->model('jabatan_model');
+        $this->load->model('akun_model');
         $this->load->library('form_validation');
         ini_set('date.timezone', 'Asia/Kuala_Lumpur');
         $level_akun = $this->session->userdata('level');
@@ -824,6 +825,26 @@ class User_karyawan extends CI_Controller
 
         $this->load->view('user_karyawan/template_user/header', $data);
         $this->load->view('user_karyawan/makanan/index', $data);
+        $this->load->view('user_karyawan/template_user/footer');
+    }
+    public function order_makanan()
+    {
+
+        $data['judul'] = 'laporan order makan';
+        // $data['alerts'] = $this->order_model->getDataJoin();
+        // $data['alerts_3'] = $this->order_model->alerts_3();
+        $data['data_departemen'] = $this->akun_model->getDataDepartemen();
+        $data['nama'] = $this->session->userdata('nama_lengkap');
+        $data['level_akun'] = $this->session->userdata('level');
+        if ($this->input->post('date') == false) {
+            $data['makanan'] = false;
+        } elseif ($this->input->post('date') == true) {
+            $date = $this->input->post('date');
+            $data['makanan'] = $this->order_model->ordermakan($date);
+        }
+
+        $this->load->view('user_karyawan/template_user/header', $data);
+        $this->load->view('user_karyawan/makanan/riwayat', $data);
         $this->load->view('user_karyawan/template_user/footer');
     }
 

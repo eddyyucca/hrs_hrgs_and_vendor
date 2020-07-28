@@ -55,15 +55,23 @@ class User_vendor extends CI_Controller
     public function order_pending($id_order_v)
     {
         $data = array(
-            "status_v" => "2"
+            "status_v" => "3"
         );
         $this->vendor_model->ubah_status_v($id_order_v, $data);
         redirect('user_vendor');
     }
+    public function kirim_order($id_order_v)
+    {
+        $data = array(
+            "status_v" => "2"
+        );
+        $this->vendor_model->ubah_status_v($id_order_v, $data);
+        redirect('user_vendor/laporan');
+    }
     public function ditolak($id_order_v)
     {
         $data = array(
-            "status_v" => "4"
+            "status_v" => "5"
 
         );
         $this->vendor_model->ubah_status_v($id_order_v, $data);

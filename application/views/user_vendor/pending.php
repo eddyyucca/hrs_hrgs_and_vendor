@@ -17,7 +17,7 @@
                             <th>Tanggal Post</th>
                             <th>Ket</th>
                             <th>Jumlah</th>
-                            <th>Status</th>
+                            <th>Aksi</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -34,14 +34,12 @@
                                 <td><?= $x->keterangan_v; ?></td>
                                 <td><?= $x->jumlah_v; ?></td>
                                 <td align="center">
-                                    <?php if ($x->status_v == 2) { ?>
-                                        <div class="alert alert-danger" role="alert">
-                                            Pending
-                                        </div>
+                                    <a href="<?= base_url('user_vendor/kirim_order/') . $x->id_order_v; ?>" class="btn btn-primary">Kirim</i></a>
+
                                 </td>
                             </tr>
-                    <?php }
-                                } ?>
+                        <?php }
+                        ?>
                     </tbody>
                 </table>
             </div>

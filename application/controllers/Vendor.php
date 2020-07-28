@@ -238,7 +238,7 @@ class Vendor extends CI_Controller
 			"waktu_post_v" => date('Y-d-m  H:i:s a'),
 			"jumlah_v" => $this->input->post('jumlah_v'),
 			"keterangan_v" => $this->input->post('keterangan_v'),
-			"status_v" => "3"
+			"status_v" => "4"
 		);
 
 		$this->db->insert('order_vendor', $data);

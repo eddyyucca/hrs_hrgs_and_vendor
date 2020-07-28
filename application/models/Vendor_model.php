@@ -41,14 +41,14 @@ class Vendor_model extends CI_Model
     {
         $this->db->order_by('id_order_v', 'DESC');
         $this->db->where('nama_v', $nama_v);
-        $this->db->where('status_v', "3");
+        $this->db->where('status_v', "4");
         return $this->db->get('order_vendor')->result();
     }
     public function laporan_v_d($nama_v)
     {
         $this->db->order_by('id_order_v', 'DESC');
         $this->db->where('nama_v', $nama_v);
-        $this->db->where('status_v', "2");
+        $this->db->where('status_v', "3");
         return $this->db->get('order_vendor')->result();
     }
     public function laporan_v_selesai($nama_v)

@@ -31,6 +31,7 @@
                                 <th>Tanggal Post</th>
                                 <th>Jumlah</th>
                                 <th>Ket</th>
+                                <th>laporan Pos</th>
                                 <th>Status</th>
                             </tr>
                         </thead>
@@ -47,32 +48,36 @@
                                     <td><?= $x->waktu_post_v; ?></td>
                                     <td><?= $x->jumlah_v; ?></td>
                                     <td><?= $x->keterangan_v; ?></td>
+                                    <td><?= $x->keterangan_p; ?></td>
                                     <td align="center">
-                                        <?php if ($x->status_v == 2) { ?>
-                                            <div class="alert alert-success" role="alert">
-                                                Pending
+                                        <?php if ($x->status_v == 4) { ?>
+                                            <div class="alert alert-secondary" role="alert">
+                                                Diajukan
                                             </div>
-                                        <?php } elseif ($x->status_v == 1) { ?>
+                                        <?php } elseif ($x->status_v == 3) { ?>
+                                            <div class="alert alert-primary" role="alert">
+                                                Terkonfirmasi
+                                            </div>
+                                        <?php  } elseif ($x->status_v == 2) { ?>
+                                            <div class="alert alert-warning" role="alert">
+                                                Dikirim
+                                            </div>
+                                        <?php  } elseif ($x->status_v == 1) { ?>
                                             <div class="alert alert-success" role="alert">
                                                 Selesai
                                             </div>
-                                        <?php  } elseif ($x->status_v == 3) { ?>
-                                            <div class="alert alert-primary" role="alert">
-                                                Di Ajukan
+                                        <?php  } elseif ($x->status_v == 5) { ?>
+                                            <div class="alert alert-danger" role="alert">
+                                                Ditolak
                                             </div>
+                                    </td>
+                                </tr>
+                        <?php
+                                        }
+                                    } ?>
+                        </tbody>
+                    </table>
                 </div>
-            <?php  } elseif ($x->status_v == 4) { ?>
-                <div class="alert alert-danger" role="alert">
-                    Di Ajukan
-                </div>
-            <?php } ?>
-            </td>
-            </tr>
-        <?php
-                            } ?>
-        </tbody>
-        </table>
             </div>
         </div>
     </div>
-</div>
