@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 28 Jul 2020 pada 19.09
+-- Waktu pembuatan: 29 Jul 2020 pada 05.54
 -- Versi server: 10.4.8-MariaDB
 -- Versi PHP: 7.3.10
 
@@ -745,6 +745,7 @@ CREATE TABLE `order_vendor` (
   `jumlah_v` varchar(100) NOT NULL,
   `keterangan_v` text NOT NULL,
   `keterangan_p` text NOT NULL,
+  `waktu_post` varchar(50) NOT NULL,
   `status_v` varchar(10) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
@@ -752,10 +753,11 @@ CREATE TABLE `order_vendor` (
 -- Dumping data untuk tabel `order_vendor`
 --
 
-INSERT INTO `order_vendor` (`id_order_v`, `nama_v`, `shift_v`, `lokasi_v`, `waktu_pesan_v`, `waktu_post_v`, `jumlah_v`, `keterangan_v`, `keterangan_p`, `status_v`) VALUES
-(16, 'baru', '2', 'baru', '2020-07-29', '2020-29-07  00:50:12 am', '2', 'eng 1 pro 1', 'ok semua', '1'),
-(17, 'baru', '2', 'baru', '2020-07-29', '2020-29-07  01:04:36 am', '11', 'eng 100 eng 100 eng 100 eng 100 eng 100 ', '', '5'),
-(18, 'baru', ' 1', 'baru', '2020-07-29', '2020-29-07  01:05:03 am', '2', 'eng 100', '', '2');
+INSERT INTO `order_vendor` (`id_order_v`, `nama_v`, `shift_v`, `lokasi_v`, `waktu_pesan_v`, `waktu_post_v`, `jumlah_v`, `keterangan_v`, `keterangan_p`, `waktu_post`, `status_v`) VALUES
+(16, 'baru', '2', 'baru', '2020-07-29', '2020-29-07  00:50:12 am', '2', 'eng 1 pro 1', 'ok semua', '', '1'),
+(17, 'baru', '2', 'baru', '2020-07-29', '2020-29-07  01:04:36 am', '11', 'eng 100 eng 100 eng 100 eng 100 eng 100 ', '', '', '5'),
+(18, 'baru', ' 1', 'baru', '2020-07-29', '2020-29-07  01:05:03 am', '2', 'eng 100', '', '', '2'),
+(19, 'baru', ' 1', 'baru', '2020-07-29', '2020-29-07  11:49:04 am', '100', 'eng 1 pro 1', 'ok semua\r\n', '2020-29-07  11:50:24 am', '1');
 
 -- --------------------------------------------------------
 
@@ -1240,7 +1242,7 @@ ALTER TABLE `order_status`
 -- AUTO_INCREMENT untuk tabel `order_vendor`
 --
 ALTER TABLE `order_vendor`
-  MODIFY `id_order_v` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
+  MODIFY `id_order_v` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
 
 --
 -- AUTO_INCREMENT untuk tabel `overtime`
