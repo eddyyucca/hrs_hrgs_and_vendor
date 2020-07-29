@@ -32,6 +32,7 @@
                                 <th>Jumlah</th>
                                 <th>Ket</th>
                                 <th>laporan Pos</th>
+                                <th>Tanggal Diterima</th>
                                 <th>Status</th>
                             </tr>
                         </thead>
@@ -49,6 +50,7 @@
                                     <td><?= $x->jumlah_v; ?></td>
                                     <td><?= $x->keterangan_v; ?></td>
                                     <td><?= $x->keterangan_p; ?></td>
+                                    <td><?= $x->waktu_post; ?></td>
                                     <td align="center">
                                         <?php if ($x->status_v == 4) { ?>
                                             <div class="alert alert-secondary" role="alert">

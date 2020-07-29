@@ -40,6 +40,7 @@ class Pos extends CI_Controller
 	{
 		$data = array(
 			"status_v" => "1",
+			"waktu_post" =>  date('Y-d-m  H:i:s a'),
 			"keterangan_p" => $this->input->post('keterangan_p')
 
 		);
@@ -53,7 +54,7 @@ class Pos extends CI_Controller
 		$data['alerts'] = $this->order_model->getDataJoin();
 		$data['alerts_3'] = $this->order_model->alerts_3();
 
-		$data['nama'] = $this->session->userdata('nama_vendor');
+		$data['nama'] = $this->session->userdata('nama_lokasi');
 		$data['level_akun'] = $this->session->userdata('level');
 		// $nama_v = $this->session->userdata('nama_vendor');
 		$data['laporan_v'] = $this->vendor_model->get_laporan_v($id_order);
