@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') or exit('No direct script access allowed');
-require_once APPPATH . "/third_party/PHPExcel/PHPExcel.php";
-require_once APPPATH . "/third_party/PHPExcel/PHPExcel/IOFactory.php";
+// require_once APPPATH . "/third_party/PHPExcel/PHPExcel.php";
+// require_once APPPATH . "/third_party/PHPExcel/PHPExcel/IOFactory.php";
 
 class Hr extends CI_Controller
 {
@@ -182,6 +182,7 @@ class Hr extends CI_Controller
                 // 'no_passport' => $this->input->post('no_passport'),
                 // 'alamat_passport' => $this->input->post('alamat_passport'),
                 // 'masa_berlaku_passport' => $this->input->post('masa_berlaku_passport'),
+                'mess' => $this->input->post('mess'),
                 'tinggi_badan' => $this->input->post('tinggi_badan'),
                 'berat_badan' => $this->input->post('berat_badan'),
                 'rhesus' => $this->input->post('rhesus'),
@@ -675,6 +676,7 @@ class Hr extends CI_Controller
             'tinggi_badan' => $this->input->post('tinggi_badan'),
             'berat_badan' => $this->input->post('berat_badan'),
             'rhesus' => $this->input->post('rhesus'),
+            'mess' => $this->input->post('mess'),
             'ukuran_baju' => $this->input->post('ukuran_baju'),
             'ukuran_celana' => $this->input->post('ukuran_celana'),
             'ukuran_sepatu' => $this->input->post('ukuran_sepatu'),
@@ -687,7 +689,7 @@ class Hr extends CI_Controller
 
 
         $this->karyawan_model->update_karyawan($data, $id);
-        redirect('user_karyawan');
+        redirect('hr/karyawan');
     }
 }
 

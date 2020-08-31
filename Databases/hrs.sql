@@ -1,14 +1,13 @@
 -- phpMyAdmin SQL Dump
--- version 4.9.1
+-- version 5.0.2
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 29 Jul 2020 pada 05.54
--- Versi server: 10.4.8-MariaDB
--- Versi PHP: 7.3.10
+-- Waktu pembuatan: 31 Agu 2020 pada 06.33
+-- Versi server: 10.4.13-MariaDB
+-- Versi PHP: 7.4.8
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-SET AUTOCOMMIT = 0;
 START TRANSACTION;
 SET time_zone = "+00:00";
 
@@ -268,6 +267,7 @@ CREATE TABLE `data_karyawan` (
   `id_dep` int(10) NOT NULL,
   `id_jab` int(10) NOT NULL,
   `status_karyawan` varchar(50) NOT NULL,
+  `mess` varchar(10) NOT NULL,
   `foto` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
@@ -275,13 +275,13 @@ CREATE TABLE `data_karyawan` (
 -- Dumping data untuk tabel `data_karyawan`
 --
 
-INSERT INTO `data_karyawan` (`id_karyawan`, `nama_lengkap`, `nama_panggilan`, `jk`, `tempat`, `ttl`, `alamat_saat_ini`, `alamat_permanen`, `no_telp`, `agama`, `warganegra`, `suku`, `no_ktp`, `alamat_ktp`, `masa_berlaku_ktp`, `no_sim_a`, `alamat_sim_a`, `masa_berlaku_sim_a`, `no_sim_c`, `alamat_sim_c`, `masa_berlaku_sim_c`, `no_npwp`, `no_bpjs_tenagakerja`, `no_bpjs_kes`, `no_passport`, `alamat_passport`, `masa_berlaku_passport`, `tinggi_badan`, `berat_badan`, `rhesus`, `ukuran_baju`, `ukuran_celana`, `ukuran_sepatu`, `hobi`, `email`, `id_dep`, `id_jab`, `status_karyawan`, `foto`) VALUES
-('1199503122', 'Syamsul Suriadi', 'Syam', 'Laki-Laki', 'Kotabaru', '1995-03-12', 'Kupang, Rantau, Kalimantan Selatan', 'Kupang, Rantau, Kalimantan Selatan', '081387651095', 'Islam', 'Indonesia', 'Banjar', 2147483647, 'Kotabaru', '2023-03-12', 0, '', '', 2147483647, 'Kotabaru', '2025-03-12', 2147483647, 2147483647, 128496922, 0, '', '', '170', '65', 'O', 'L', 'L', '43', 'Memancing', 's.syamsul@gmail.com', 1, 14, 'Aktif', '292912e8cbc03dda29214d2c61feb807.png'),
-('1202005081', 'eddy adha saputra', 'eddy', 'Laki-Laki', 'tapin', '2020-05-08', 'Tapin\r\n', '', '', '', '', '', 0, '', '', 0, '', '', 0, '', '', 0, 0, 0, 0, '', '', '112', '', '', '', '', '', '', '', 1, 12, '', 'foto.jpg'),
-('1202007034', 'mas jordy', 'jordy', 'Laki-Laki', 'tapin', '2020-07-03', '', '', '083159982119', '', '', '', 0, '', '', 0, '', '', 0, '', '', 0, 0, 0, 0, '', '', '', '', '', '', '', '', '', '', 1, 2, '', ''),
-('2199806251', 'Muhammad Aldi', 'Aldi', 'Laki-Laki', 'Tatakan', '1998-06-25', 'Jl. A. Yani, Tatakan Datu Sanggul', 'Jl. A. Yani, Tatakan Datu Sanggul', '081346814830', 'Islam', 'Indonesia', 'Banjar', 2147483647, 'Jl. A. Yani, Tatakan Datu Sanggul, Tapin Selatan, Tapin, Kalimantan Selatan', '2021-06-25', 0, '', '', 2147483647, 'Jl. A. Yani, Tatakan Datu Sanggul, Tapin Selatan, Tapin, Kalimantan Selatan', '2025-06-25', 2147483647, 2147483647, 127496931, 0, '', '', '165', '60', 'B ', 'L', 'L', '40', 'Menggambar', 'aldi555@gmail.com', 2, 15, '', 'main-list-image2nd-b016a720-04e2-4536-bcac-b82f60ee00a3-7.jpeg'),
-('3199607191', 'Berlian Mutiara Senduk', 'Lian', 'Perempuan', 'Balikpapan', '1996-07-19', 'Pulau Pinang', 'Pulau Pinang', '089856701242', 'Kristen', 'Indonesia', 'Toraja', 2147483647, 'Jl. A. Yani, Tapin Utara, Tapin, Kalimantan Selatan', '2023-07-19', 0, '', '', 2147483647, 'Jl. A. Yani, Tapin Utara, Tapin, Kalimantan Selatan', '2024-07-19', 2147483647, 2147483647, 146496942, 0, '', '', '160', '49', 'AB', 'S', 'S', '37', 'Menulis', 'berlian.mutiara@gmail.com', 1, 15, '', 'pas-foto-3x4.jpg'),
-('4199609131', 'Gina Sonia', 'Gina', 'Perempuan', 'Tatakan', '1996-09-13', 'Desa Tatakan, Tapin Selatan, Tapin, Kalimantan Sekatan', 'Desa Tatakan, Tapin Selatan, Tapin, Kalimantan Sekatan', '081337426207', 'Islam', 'Indonesia', 'Banjar', 2147483647, 'Jl. A. Yani, Tatakan Datu Sanggul, Tapin Selatan, Tapin, Kalimantan Selatan', '2022-09-13', 0, '', '', 2147483647, 'Jl. A. Yani, Tatakan Datu Sanggul, Tapin Selatan, Tapin, Kalimantan Selatan', '2022-09-13', 2147483647, 2147483647, 121346531, 0, '', '', '159', '40', 'A', 'S', 'S', '37', 'Memasak', 'gisoni@gmail.com', 4, 2, '', 'b33296bb-4994-4284-b69c-9309efdba868_34.jpeg');
+INSERT INTO `data_karyawan` (`id_karyawan`, `nama_lengkap`, `nama_panggilan`, `jk`, `tempat`, `ttl`, `alamat_saat_ini`, `alamat_permanen`, `no_telp`, `agama`, `warganegra`, `suku`, `no_ktp`, `alamat_ktp`, `masa_berlaku_ktp`, `no_sim_a`, `alamat_sim_a`, `masa_berlaku_sim_a`, `no_sim_c`, `alamat_sim_c`, `masa_berlaku_sim_c`, `no_npwp`, `no_bpjs_tenagakerja`, `no_bpjs_kes`, `no_passport`, `alamat_passport`, `masa_berlaku_passport`, `tinggi_badan`, `berat_badan`, `rhesus`, `ukuran_baju`, `ukuran_celana`, `ukuran_sepatu`, `hobi`, `email`, `id_dep`, `id_jab`, `status_karyawan`, `mess`, `foto`) VALUES
+('1199503122', 'Syamsul Suriadi', 'Syam', 'Laki-Laki', 'Kotabaru', '1995-03-12', 'Kupang, Rantau, Kalimantan Selatan', 'Kupang, Rantau, Kalimantan Selatan', '081387651095', 'Islam', 'Indonesia', 'Banjar', 2147483647, 'Kotabaru', '2023-03-12', 0, '', '', 2147483647, 'Kotabaru', '2025-03-12', 2147483647, 2147483647, 128496922, 0, '', '', '170', '65', 'O', 'L', 'L', '43', 'Memancing', 's.syamsul@gmail.com', 1, 14, 'Aktif', 'Ya', '292912e8cbc03dda29214d2c61feb807.png'),
+('1202005081', 'eddy adha saputra', 'eddy', 'Laki-Laki', 'tapin', '2020-05-08', 'Tapin\r\n', '', '', '', '', '', 0, '', '', 0, '', '', 0, '', '', 0, 0, 0, 0, '', '', '112', '', '', '', '', '', '', '', 1, 12, '', 'Ya', 'foto.jpg'),
+('1202007034', 'mas jordy', 'jordy', 'Laki-Laki', 'tapin', '2020-07-03', '', '', '083159982119', '', '', '', 0, '', '', 0, '', '', 0, '', '', 0, 0, 0, 0, '', '', '', '', '', '', '', '', '', '', 1, 2, '', 'Tidak', ''),
+('2199806251', 'Muhammad Aldi', 'Aldi', 'Laki-Laki', 'Tatakan', '1998-06-25', 'Jl. A. Yani, Tatakan Datu Sanggul', 'Jl. A. Yani, Tatakan Datu Sanggul', '081346814830', 'Islam', 'Indonesia', 'Banjar', 2147483647, 'Jl. A. Yani, Tatakan Datu Sanggul, Tapin Selatan, Tapin, Kalimantan Selatan', '2021-06-25', 0, '', '', 2147483647, 'Jl. A. Yani, Tatakan Datu Sanggul, Tapin Selatan, Tapin, Kalimantan Selatan', '2025-06-25', 2147483647, 2147483647, 127496931, 0, '', '', '165', '60', 'B ', 'L', 'L', '40', 'Menggambar', 'aldi555@gmail.com', 2, 15, '', '', 'main-list-image2nd-b016a720-04e2-4536-bcac-b82f60ee00a3-7.jpeg'),
+('3199607191', 'Berlian Mutiara Senduk', 'Lian', 'Perempuan', 'Balikpapan', '1996-07-19', 'Pulau Pinang', 'Pulau Pinang', '089856701242', 'Kristen', 'Indonesia', 'Toraja', 2147483647, 'Jl. A. Yani, Tapin Utara, Tapin, Kalimantan Selatan', '2023-07-19', 0, '', '', 2147483647, 'Jl. A. Yani, Tapin Utara, Tapin, Kalimantan Selatan', '2024-07-19', 2147483647, 2147483647, 146496942, 0, '', '', '160', '49', 'AB', 'S', 'S', '37', 'Menulis', 'berlian.mutiara@gmail.com', 1, 15, '', '', 'pas-foto-3x4.jpg'),
+('4199609131', 'Gina Sonia', 'Gina', 'Perempuan', 'Tatakan', '1996-09-13', 'Desa Tatakan, Tapin Selatan, Tapin, Kalimantan Sekatan', 'Desa Tatakan, Tapin Selatan, Tapin, Kalimantan Sekatan', '081337426207', 'Islam', 'Indonesia', 'Banjar', 2147483647, 'Jl. A. Yani, Tatakan Datu Sanggul, Tapin Selatan, Tapin, Kalimantan Selatan', '2022-09-13', 0, '', '', 2147483647, 'Jl. A. Yani, Tatakan Datu Sanggul, Tapin Selatan, Tapin, Kalimantan Selatan', '2022-09-13', 2147483647, 2147483647, 121346531, 0, '', '', '159', '40', 'A', 'S', 'S', '37', 'Memasak', 'gisoni@gmail.com', 4, 2, '', '', 'b33296bb-4994-4284-b69c-9309efdba868_34.jpeg');
 
 -- --------------------------------------------------------
 

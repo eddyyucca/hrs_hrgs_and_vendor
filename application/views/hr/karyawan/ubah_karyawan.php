@@ -114,6 +114,14 @@
                                 </select></td>
                         </tr>
                         <tr>
+                            <td>Mess</td>
+                            <td><select class="form-control" name="mess">
+                                    <option value="">--PILIH--</option>
+                                    <option value="Ya" <?= "Ya" == $getid->mess ? 'selected=selected' : ''; ?>>Ya</option>
+                                    <option value="Tidak" <?= "Tidak" == $getid->mess ? 'selected=selected' : ''; ?>>Tidak</option>
+                                </select></td>
+                        </tr>
+                        <tr>
                             <td>Status Karyawan</td>
                             <td><select name="status_karyawan" class="form-control">
                                     <option value="">--PILIH STATUS--</option>

@@ -60,18 +60,21 @@
 						</div>
 					</div>
 				</li>
-				<li class="nav-item">
-					<a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#makanan" aria-expanded="true" aria-controls="makanan">
-						<i class="fas fa-drumstick-bite"></i>
-						<span>Makanan</span>
-					</a>
-					<div id="makanan" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
-						<div class="bg-white py-2 collapse-inner rounded">
-							<a class="collapse-item" href="<?= base_url('user_karyawan/makanan') ?>">Order Makanan</a>
-							<a class="collapse-item" href="<?= base_url('user_karyawan/order_makanan') ?>">riwayat Order</a>
+				<?php if ($mess == 'Ya') { ?>
+					<li class="nav-item">
+						<a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#makanan" aria-expanded="true" aria-controls="makanan">
+							<i class="fas fa-drumstick-bite"></i>
+							<span>Makanan</span>
+						</a>
+						<div id="makanan" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
+							<div class="bg-white py-2 collapse-inner rounded">
+								<a class="collapse-item" href="<?= base_url('user_karyawan/makanan') ?>">Order Makanan</a>
+								<a class="collapse-item" href="<?= base_url('user_karyawan/order_makanan') ?>">riwayat Order</a>
+							</div>
 						</div>
-					</div>
-				</li>
+					</li>
+				<?php } elseif ($mess == 'Tidak') {
+				} ?>
 				<!-- Divider -->
 				<hr class="sidebar-divider d-none d-md-block">
 

@@ -117,6 +117,14 @@
                                     </select></td>
                             </tr>
                             <tr>
+                                <td>Mess</td>
+                                <td><select class="form-control" name="mess">
+                                        <option value="">--PILIH--</option>
+                                        <option value="Ya">Ya</option>
+                                        <option value="Tidak">Tidak</option>
+                                    </select></td>
+                            </tr>
+                            <tr>
                                 <td>
                                     <button class="btn btn-primary">Simpan</button>
                                 </td>

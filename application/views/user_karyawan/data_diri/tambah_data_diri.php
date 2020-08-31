@@ -114,9 +114,15 @@
                                 </select></td>
                         </tr>
                         <tr>
+                            <td>Mess</td>
+                            <td><select class="form-control" name="mess" disabled>
+                                    <option value="Ya" <?= "Ya" == $getid->mess ? 'selected=selected' : ''; ?>>Ya</option>
+                                    <option value="Tidak" <?= "Tidak" == $getid->mess ? 'selected=selected' : ''; ?>>Tidak</option>
+                                </select></td>
+                        </tr>
+                        <tr>
                             <td>Status Karyawan</td>
-                            <td>
-                            <td><input type="text" name="status" class="form-control" value="<?= $getid->status_karyawan ?>" placeholder="Email"></td>
+                            <td><input type="text" name="status" class="form-control" value="<?= $getid->status_karyawan ?>" placeholder="Status" disabled></td>
                             </td>
                         </tr>
                         <tr>

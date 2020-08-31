@@ -51,6 +51,7 @@ class Auth extends CI_Controller
 			$this->session->set_userdata('nama_lengkap', $row->nama_lengkap);
 			$this->session->set_userdata('id_dep', $row->id_dep);
 			$this->session->set_userdata('level', $row->level);
+			$this->session->set_userdata('mess', $row->mess);
 
 			redirect('user_karyawan');
 		} else {
