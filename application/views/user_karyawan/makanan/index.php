@@ -2,7 +2,7 @@
     <!-- Page Heading -->
     <div class="card shadow mb-4">
         <div class="card-header py-3">
-            <a href="<?= base_url('catering') ?>"><i class="fas fa-arrow-circle-left"> Kembali</i></a>
+            <a href="<?= base_url('user_karyawan') ?>"><i class="fas fa-arrow-circle-left"> Kembali</i></a>
         </div>
         <div class="card-body">
             <div class="table-responsive">
@@ -19,7 +19,7 @@
                                 <td width=20%>Mess</td>
                                 <td><select name="nama_mess" class="form-control">
                                         <option value="">--Pilih--</option>
-                                        <?php foreach ($mess as $x) { ?>
+                                        <?php foreach ($mess_2 as $x) { ?>
                                             <option value="<?= $x->mess_lahan ?>"><?= $x->mess_lahan ?></option>
                                         <?php } ?>
                                     </select></td>

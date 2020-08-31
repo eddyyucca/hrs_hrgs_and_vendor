@@ -55,8 +55,17 @@
 						<div class="bg-white py-2 collapse-inner rounded">
 							<a class="collapse-item" href="<?= base_url('user_karyawan/password') ?>">Ubah Password</a>
 							<a class="collapse-item" href="<?= base_url('user_karyawan/tambah_data_diri') ?>">Data Diri</a>
-
-
+						</div>
+					</div>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities" aria-expanded="true" aria-controls="collapseUtilities">
+						<i class="fas fa-fingerprint"></i>
+						<span>Absensi</span>
+					</a>
+					<div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
+						<div class="bg-white py-2 collapse-inner rounded">
+							<a class="collapse-item" href="<?= base_url('user_karyawan/data_absen') ?>">Absen Bulan</a>
 						</div>
 					</div>
 				</li>

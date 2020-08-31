@@ -820,9 +820,10 @@ class User_karyawan extends CI_Controller
     public function data_absen()
     {
         $id_kar = $this->session->userdata('id_kar');
-        $data['judul'] = 'Human Resource ';
+        $data['judul'] = 'Data Absen';
+        $data['level_akun'] = $this->session->userdata('level');
         $data['nama'] = $this->session->userdata('nama_lengkap');
-
+        $data['mess'] = $this->session->userdata('mess');
         $data['id_kar'] = $id_kar;
         $bulan = $this->input->post('bulan');
         $tahun = $this->input->post('tahun');
@@ -840,13 +841,13 @@ class User_karyawan extends CI_Controller
     }
     public function makanan()
     {
-
-        $data['judul'] = 'Karyawan';
+        $data['judul'] = 'Order Makanan';
         $data['nama'] = $this->session->userdata('nama_lengkap');
         $data['level_akun'] = $this->session->userdata('level');
         $data['mess'] = $this->session->userdata('mess');
+
         $data['id_kar'] = $this->session->userdata('id_kar');
-        $data['mess'] = $this->mess_model->data_mess();
+        $data['mess_2'] = $this->mess_model->data_mess();
 
         $this->load->view('user_karyawan/template_user/header', $data);
         $this->load->view('user_karyawan/makanan/index', $data);
