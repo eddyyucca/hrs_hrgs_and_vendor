@@ -57,6 +57,10 @@
                                 <td> No Telpon </td>
                                 <td>: <?= $data->no_telp ?> </td>
                             </tr>
+                            <tr>
+                                <td> Mess </td>
+                                <td>: <?= $data->mess ?> </td>
+                            </tr>
                         </table>
 
                     </div>
@@ -419,17 +423,146 @@
             <div class="col-6">
                 <div class="card shadow mb-4">
                     <!-- Card Header - Accordion -->
-                    <a href="#overtime" class="d-block card-header py-3" data-toggle="collapse" role="button" aria-expanded="true" aria-controls="overtime">
-                        <h6 class="m-0 font-weight-bold text-primary">Overtime</h6>
+                    <a href="#data_diri" class="d-block card-header py-3" data-toggle="collapse" role="button" aria-expanded="true" aria-controls="data_diri">
+                        <h6 class="m-0 font-weight-bold text-primary">data_diri</h6>
                     </a>
                     <!-- Card Content - Collapse -->
-                    <div class="collapse show" id="overtime">
+                    <div class="collapse show" id="data_diri">
                         <div class="card-body">
-                            <?php if ($overtime == false) {
-                                echo '--OVERTIME KOSONG--';
-                            } else {
-                                echo "Jumlah Overtim Bulan Ini " . $overtime;
-                            } ?>
+                            <table>
+                                <tr>
+                                    <td> NRP</td>
+                                    <td>: <?= $data1["id_karyawan"] ?> </td>
+                                </tr>
+                                <tr>
+                                    <td> Nama Lengkap</td>
+                                    <td>: <?= $data1["nama_lengkap"] ?> </td>
+                                </tr>
+                                <tr>
+                                    <td> Nama Panggilan</td>
+                                    <td>: <?= $data1["nama_panggilan"] ?> </td>
+                                </tr>
+                                <tr>
+                                    <td>Jenis Kelamin</td>
+                                    <td>: <?= $data1["jk"] ?> </td>
+                                </tr>
+                                <tr>
+                                    <td> TTL </td>
+                                    <td>: <?= $data1["tempat"] ?> <?= $data1["ttl"] ?> </td>
+                                </tr>
+                                <tr>
+                                    <td>Alamat Saat Ini</td>
+                                    <td>: <?= $data1["alamat_saat_ini"] ?> </td>
+                                </tr>
+                                <tr>
+                                    <td>Alamat Permanen</td>
+                                    <td>: <?= $data1["alamat_permanen"] ?> </td>
+                                </tr>
+                                <tr>
+                                    <td>Telpon</td>
+                                    <td>: <?= $data1["no_telp"] ?> </td>
+                                </tr>
+                                <tr>
+                                    <td>Agama</td>
+                                    <td>: <?= $data1["agama"] ?> </td>
+                                </tr>
+                                <tr>
+                                    <td>Warganegara</td>
+                                    <td>: <?= $data1["warganegra"] ?> </td>
+                                </tr>
+                                <tr>
+                                    <td>Suku</td>
+                                    <td>: <?= $data1["suku"] ?> </td>
+                                </tr>
+                                <tr>
+                                    <td>No KTP</td>
+                                    <td>: <?= $data1["no_ktp"] ?> </td>
+                                </tr>
+                                <tr>
+                                    <td>Alamat KTP</td>
+                                    <td>: <?= $data1["alamat_ktp"] ?> </td>
+                                </tr>
+                                <tr>
+                                    <td>Masa Berlaku KTP</td>
+                                    <td>: <?= $data1["masa_berlaku_ktp"] ?> </td>
+                                </tr>
+                                <tr>
+                                    <td>No SIM A</td>
+                                    <td>: <?= $data1["no_sim_a"] ?> </td>
+                                </tr>
+                                <tr>
+                                    <td>Alamat SIM A</td>
+                                    <td>: <?= $data1["alamat_sim_a"] ?> </td>
+                                </tr>
+                                <tr>
+                                    <td>Masa Berlaku SIM A</td>
+                                    <td>: <?= $data1["masa_berlaku_sim_a"] ?> </td>
+                                </tr>
+                                <tr>
+                                    <td>No SIm C</td>
+                                    <td>: <?= $data1["masa_berlaku_sim_a"] ?> </td>
+                                </tr>
+                                <tr>
+                                    <td>Alamat SIm C</td>
+                                    <td>: <?= $data1["alamat_sim_a"] ?> </td>
+                                </tr>
+                                <tr>
+                                    <td>Masa Berlaku SIm C</td>
+                                    <td>: <?= $data1["masa_berlaku_sim_c"] ?> </td>
+                                </tr>
+                                <tr>
+                                    <td>No NPWP</td>
+                                    <td>: <?= $data1["no_npwp"] ?> </td>
+                                </tr>
+                                <tr>
+                                    <td>No BPJS Tenagakerja</td>
+                                    <td>: <?= $data1["no_bpjs_tenagakerja"] ?> </td>
+                                </tr>
+                                <tr>
+                                    <td>No BPJS Kesehatan</td>
+                                    <td>: <?= $data1["no_bpjs_kes"] ?> </td>
+                                </tr>
+                                <tr>
+                                    <td>No Passport</td>
+                                    <td>: <?= $data1["no_passport"] ?> </td>
+                                </tr>
+                                <tr>
+                                    <td>Alamat Passport</td>
+                                    <td>: <?= $data1["alamat_passport"] ?> </td>
+                                </tr>
+                                <tr>
+                                    <td>Masa Berlaku Passport</td>
+                                    <td>: <?= $data1["masa_berlaku_passport"] ?> </td>
+                                </tr>
+                                <tr>
+                                    <td>Tinggi Badan</td>
+                                    <td>: <?= $data1["tinggi_badan"] ?> </td>
+                                </tr>
+                                <tr>
+                                    <td>Berat Badan</td>
+                                    <td>: <?= $data1["berat_badan"] ?> </td>
+                                </tr>
+                                <tr>
+                                    <td>Rhesus</td>
+                                    <td>: <?= $data1["rhesus"] ?> </td>
+                                </tr>
+                                <tr>
+                                    <td>Ukuran Baju</td>
+                                    <td>: <?= $data1["ukuran_baju"] ?> </td>
+                                </tr>
+                                <tr>
+                                    <td>Ukuran Celana</td>
+                                    <td>: <?= $data1["ukuran_celana"] ?> </td>
+                                </tr>
+                                <tr>
+                                    <td>Ukuran Sepatu</td>
+                                    <td>: <?= $data1["ukuran_sepatu"] ?> </td>
+                                </tr>
+                                <tr>
+                                    <td>Hobi</td>
+                                    <td>: <?= $data1["hobi"] ?> </td>
+                                </tr>
+                            </table>
                         </div>
                     </div>
                 </div>

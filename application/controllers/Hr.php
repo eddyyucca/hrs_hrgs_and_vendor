@@ -74,6 +74,9 @@ class Hr extends CI_Controller
         $data['alerts_3'] = $this->order_model->alerts_3();
         $data['nama'] = $this->session->userdata('nama_user');
         $data['level_akun'] = $this->session->userdata('level');
+        $id = $id_karyawan;
+        $x = $this->karyawan_model->get_karyawan($id);
+        $data['data1'] =  json_decode(json_encode($x), true);
         $data["pesan"] = "";
 
         $id = $id_karyawan;

@@ -57,6 +57,10 @@
                                 <td> No Telpon </td>
                                 <td>: <?= $data["no_telp"] ?> </td>
                             </tr>
+                            <tr>
+                                <td> Mess </td>
+                                <td>: <?= $data["mess"] ?> </td>
+                            </tr>
 
                         </table>
 
